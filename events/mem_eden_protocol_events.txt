@@ -6,6 +6,10 @@ country_event = {
 
 	is_triggered_only = yes
 
+	trigger = {
+		has_origin = origin_mem_eden_protocol
+	}
+
 	immediate = {
 		capital_scope = {
 			remove_all_buildings = yes
@@ -69,5 +73,24 @@ country_event = {
 				}
 			}
 		}		
+	}
+}
+
+country_event = {
+	id = mem_eden_protocol.1001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				is_planet_class = pc_habitat
+			}
+		}
+		set_variable = {
+			which = mem_eden_protocol_cartaker_variable
+			value = value:mem_eden_protocol_cartaker_value
+		}
 	}
 }
