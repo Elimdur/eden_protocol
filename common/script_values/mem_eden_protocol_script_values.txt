@@ -1,4 +1,4 @@
-mem_eden_protocol_cartaker_value = {
+mem_eden_protocol_caretaker_value = {
 	base = 1
  	complex_trigger_modifier = { 	#This lets you get the value of a trigger that you can't use in one-liners because it uses {}
  		trigger = count_owned_planet
