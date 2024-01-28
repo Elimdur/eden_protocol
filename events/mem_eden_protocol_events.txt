@@ -76,16 +76,224 @@ country_event = {
 	}
 }
 
+#test for yearly pulse event
 country_event = {
 	id = mem_eden_protocol.1001
 	hide_window = yes
 
 	is_triggered_only = yes
 
+	trigger = {
+		has_origin = origin_mem_eden_protocol
+	}
+
 	immediate = {
 		every_owned_planet = {
 			limit = {
 				is_planet_class = pc_habitat
+			}
+			if = {
+				limit = {
+					owner = {
+						NOT = {
+							has_country_flag = mem_eden_protocol_seeding_pause
+						}
+					}
+					OR = {
+						has_building = building_mem_eden_protocol_seeder_1
+						has_building = building_mem_eden_protocol_seeder_2
+						has_building = building_mem_eden_protocol_seeder_3
+					}
+					solar_system = {
+						any_system_planet = {
+							habitable_planet_not_urban = yes
+							NOT = {
+								exists = owner
+							}
+						}
+					}
+				}
+				random_list = {
+					80 = {}
+					20 = {
+						solar_system = {
+							random_system_planet = {
+								limit = {
+									habitable_planet_not_urban = yes
+									NOT = {
+										exists = owner
+									}
+								}
+								generate_early_pre_ftls_on_planet = yes
+							}
+						}
+						owner = {
+							set_timed_country_flag = {
+								flag = mem_eden_protocol_seeding_pause
+								years = 2
+							}
+							# give notification
+						}						
+					}
+				}
+				reroll_random = yes
+			}
+			if = {
+				limit = {
+					owner = {
+						NOT = {
+							has_country_flag = mem_eden_protocol_terraforming_pause
+						}
+					}
+					OR = {
+						has_building = building_mem_eden_protocol_terraformer_1
+						has_building = building_mem_eden_protocol_terraformer_2
+					}
+					solar_system = {
+						any_system_planet = {
+							OR = {
+								has_modifier = terraforming_candidate
+								is_planet_class = pc_nuked
+							}
+							OR = {
+								NOT = {
+									exists = owner
+								}
+								owner = {
+									is_country_type = primitive
+								}
+							}
+						}
+					}
+				}
+				random_list = {
+					90 = {}
+					10 = {
+						solar_system = {
+							random_system_planet = {
+								limit = {
+									OR = {
+										has_modifier = terraforming_candidate
+										is_planet_class = pc_nuked
+									}
+									OR = {
+										NOT = {
+											exists = owner
+										}
+										owner = {
+											is_country_type = primitive
+										}
+									}
+									
+								}
+								change_pc = rl_habitable_normal
+								reset_planet = yes
+							}
+						}
+						owner = {
+							set_timed_country_flag = {
+								flag = mem_eden_protocol_terraforming_pause
+								years = 3
+							}
+							# give notification
+						}						
+					}
+				}
+				reroll_random = yes
+			}
+			if = {
+				limit = {
+					owner = {
+						NOT = {
+							has_country_flag = mem_eden_protocol_terraforming_pause
+						}
+					}
+					has_building = building_mem_eden_protocol_terraformer_2
+					solar_system = {
+						any_system_planet = {
+							has_modifier = toxic_terraforming_candidate
+						}
+					}
+				}
+				random_list = {
+					90 = {}
+					10 = {
+						solar_system = {
+							random_system_planet = {
+								limit = {
+									has_modifier = toxic_terraforming_candidate
+								}
+								change_pc = rl_habitable_normal
+							}
+						}
+						owner = {
+							set_timed_country_flag = {
+								flag = mem_eden_protocol_terraforming_pause
+								years = 3
+							}
+							# give notification
+						}						
+					}
+				}
+				reroll_random = yes
+			}
+			if = {
+				limit = {
+					owner = {
+						NOT = {
+							has_country_flag = mem_eden_protocol_terraforming_pause
+						}
+					}
+					has_building = building_mem_eden_protocol_terraformer_2
+					solar_system = {
+						any_system_planet = {
+							habitable_planet_not_urban = yes
+							NOT = {
+								is_planet_class = pc_gaia
+							}
+							OR = {
+								NOT = {
+									exists = owner
+								}
+								owner = {
+									is_country_type = primitive
+								}
+							}
+						}
+					}
+				}
+				random_list = {
+					90 = {}
+					10 = {
+						solar_system = {
+							random_system_planet = {
+								limit = {
+									habitable_planet_not_urban = yes
+									NOT = {
+										is_planet_class = pc_gaia
+									}
+									OR = {
+										NOT = {
+											exists = owner
+										}
+										owner = {
+											is_country_type = primitive
+										}
+									}
+								}
+								change_pc = pc_gaia
+							}
+						}
+						owner = {
+							set_timed_country_flag = {
+								flag = mem_eden_protocol_terraforming_pause
+								years = 3
+							}
+							# give notification
+						}						
+					}
+				}
+				reroll_random = yes
 			}
 			set_variable = {
 				which = mem_eden_protocol_caretaker_variable
