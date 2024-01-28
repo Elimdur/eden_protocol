@@ -87,10 +87,10 @@ country_event = {
 			limit = {
 				is_planet_class = pc_habitat
 			}
-		}
-		set_variable = {
-			which = mem_eden_protocol_cartaker_variable
-			value = value:mem_eden_protocol_cartaker_value
-		}
+			set_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value = value:mem_eden_protocol_cartaker_value
+			}
+		}		
 	}
 }

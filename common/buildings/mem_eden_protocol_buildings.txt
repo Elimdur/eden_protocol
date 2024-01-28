@@ -69,8 +69,95 @@ building_mem_eden_protocol_seeder_1 = {
 		}
 	}
 
-	planet_modifier = {
-		job_mem_caretaker_add = mem_eden_protocol_cartaker_variable
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 0
+			}
+		}
+		job_mem_caretaker_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 1
+			}
+		}
+		job_mem_caretaker_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 2
+			}
+		}
+		job_mem_caretaker_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 3
+			}
+		}
+		job_mem_caretaker_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 4
+			}
+		}
+		job_mem_caretaker_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 5
+			}
+		}
+		job_mem_caretaker_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 6
+			}
+		}
+		job_mem_caretaker_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 7
+			}
+		}
+		job_mem_caretaker_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 8
+			}
+		}
+		job_mem_caretaker_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 9
+			}
+		}
+		job_mem_caretaker_add = 1
 	}
 }
 
@@ -122,9 +209,95 @@ building_mem_eden_protocol_seeder_2 = {
 		}
 	}
 
-	planet_modifier = {
-		pop_growth_speed = 0.05
-		pop_environment_tolerance = 0.1
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 0
+			}
+		}
+		job_mem_caretaker_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 1
+			}
+		}
+		job_mem_caretaker_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 2
+			}
+		}
+		job_mem_caretaker_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 3
+			}
+		}
+		job_mem_caretaker_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 4
+			}
+		}
+		job_mem_caretaker_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 5
+			}
+		}
+		job_mem_caretaker_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 6
+			}
+		}
+		job_mem_caretaker_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 7
+			}
+		}
+		job_mem_caretaker_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 8
+			}
+		}
+		job_mem_caretaker_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 9
+			}
+		}
+		job_mem_caretaker_add = 2
 	}
 }
 
@@ -175,7 +348,94 @@ building_mem_eden_protocol_seeder_3 = {
 		}
 	}
 
-	planet_modifier = {
-		pop_environment_tolerance = 0.2
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 0
+			}
+		}
+		job_mem_caretaker_add = 3
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 1
+			}
+		}
+		job_mem_caretaker_add = 3
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 2
+			}
+		}
+		job_mem_caretaker_add = 3
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 3
+			}
+		}
+		job_mem_caretaker_add = 3
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 4
+			}
+		}
+		job_mem_caretaker_add = 3
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 5
+			}
+		}
+		job_mem_caretaker_add = 3
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 6
+			}
+		}
+		job_mem_caretaker_add = 3
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 7
+			}
+		}
+		job_mem_caretaker_add = 3
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 8
+			}
+		}
+		job_mem_caretaker_add = 3
+	}
+	triggered_planet_modifier = {
+		potential = {
+			check_variable = {
+				which = mem_eden_protocol_cartaker_variable
+				value > 9
+			}
+		}
+		job_mem_caretaker_add = 3
 	}
 }
