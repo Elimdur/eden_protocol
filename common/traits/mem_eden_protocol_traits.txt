@@ -1,0 +1,38 @@
+mem_machine_trait_void_dweller_1 = {
+	icon = "gfx/interface/icons/traits/trait_void_dweller_positive.dds"
+	initial = no
+	species_potential_add = {
+		exists = from
+		from = {
+			has_origin = origin_mem_eden_protocol
+		}
+	}
+	species_possible_add = {
+		has_trait = trait_machine_unit
+	}
+	species_possible_remove = {
+	}
+	randomized = no
+	allowed_archetypes = { MACHINE }
+	sorting_priority = 30
+
+	modifier = {
+		habitat_jobs_produces_mult = 0.10
+		non_artificial_planet_jobs_produces_mult = -0.30
+	}
+	ai_weight = {
+		weight = 0
+	}
+	assembly_score = {
+		modifier = {
+			add = 1.5
+			from = { uses_district_set = habitat }
+		}
+		modifier = {
+			subtract = 1.5
+			from = {
+				NOT = { uses_district_set = habitat }
+			}
+		}
+	}
+}

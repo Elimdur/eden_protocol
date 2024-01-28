@@ -1,0 +1,73 @@
+namespace = mem_eden_protocol
+
+country_event = {
+	id = mem_eden_protocol.1
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		capital_scope = {
+			remove_all_buildings = yes
+			add_building = building_hab_major_capital
+			add_building = building_machine_assembly_plant
+			if = {
+				limit = { owner = { has_civic = civic_machine_servitor } }
+				add_building = building_organic_sanctuary
+			}
+		}		
+	}
+}
+
+country_event = {
+	id = mem_eden_protocol.1000
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		capital_scope = {
+			remove_all_buildings = yes
+			add_building = building_hab_major_capital
+			add_building = building_machine_assembly_plant
+			if = {
+				limit = { owner = { has_civic = civic_machine_servitor } }
+				add_building = building_organic_sanctuary
+			}
+			if = {
+				limit = {
+					owner = { has_valid_civic = civic_machine_servitor }
+				}
+				last_created_species = {
+					if = {
+						limit = {
+							PREV = { is_planet_class = pc_habitat }
+						}
+						modify_species = {
+							species = this
+							ideal_planet_class = home_planet
+						}
+					}
+					set_citizenship_type = {
+						country = root.owner
+						type = citizenship_limited
+					}
+					set_living_standard = {
+						country = root.owner
+						type = living_standard_organic_trophy
+					}
+				}
+				while = {
+					count = 5
+					create_pop = {
+						species = last_created_species
+						ethos = random
+					}
+					last_created_pop = {
+						clear_ethos = yes
+					}
+				}
+			}
+		}		
+	}
+}
