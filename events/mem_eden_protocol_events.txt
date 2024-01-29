@@ -1,5 +1,6 @@
 namespace = mem_eden_protocol
 
+# fired at gamestart to setup the habitat
 country_event = {
 	id = mem_eden_protocol.1
 	hide_window = yes
@@ -11,74 +12,114 @@ country_event = {
 	}
 
 	immediate = {
+		set_country_flag = encountered_first_primitive
+		set_policy = {
+			policy = interference
+			option = interference_subtle
+		}
+		set_policy_cooldown = interference
+		set_policy = {
+			policy = enlightenment
+			option = enlightenment_not_allowed
+		}
+		set_policy_cooldown = enlightenment
 		capital_scope = {
 			remove_all_buildings = yes
+			remove_all_districts = yes
+			add_district = district_hab_mining
+			add_district = district_hab_energy
+			add_district = district_hab_energy
+			add_district = district_hab_science
+			add_district = district_hab_industrial
+			add_district = district_hab_housing
+			add_district = district_hab_housing
 			add_building = building_hab_major_capital
 			add_building = building_machine_assembly_plant
-			if = {
-				limit = { owner = { has_civic = civic_machine_servitor } }
-				add_building = building_organic_sanctuary
+			add_building = building_mem_eden_protocol_terraformer_1
+			add_building = building_mem_eden_protocol_seeder_1
+			set_variable = {
+				which = mem_eden_protocol_caretaker_variable
+				value = value:mem_eden_protocol_caretaker_value
 			}
-		}		
-	}
-}
-
-country_event = {
-	id = mem_eden_protocol.1000
-	hide_window = yes
-
-	is_triggered_only = yes
-
-	immediate = {
-		capital_scope = {
-			remove_all_buildings = yes
-			add_building = building_hab_major_capital
-			add_building = building_machine_assembly_plant
-			if = {
-				limit = { owner = { has_civic = civic_machine_servitor } }
-				add_building = building_organic_sanctuary
-			}
-			if = {
-				limit = {
-					owner = { has_valid_civic = civic_machine_servitor }
-				}
-				last_created_species = {
+			while = {
+				count = 2
+				closest_system = {
+					limit = {
+						OR = {
+							has_star_flag = neighbor_t1_first_colony
+							has_star_flag = neighbor_t2_second_colony
+						}
+						NOT = {
+							any_system_planet = {
+								has_planet_flag = mem_eden_protocol_terraforming_candidate
+							}
+						}
+					}
+					random_system_planet = {
+						limit = {
+							has_planet_flag = prescripted_ideal
+						}
+						clear_deposits = yes
+						change_pc = pc_barren
+						add_modifier = {
+							modifier = terraforming_candidate
+						}
+						set_planet_flag = mem_eden_protocol_terraforming_candidate
+					}
 					if = {
 						limit = {
-							PREV = { is_planet_class = pc_habitat }
+							NOT = {
+								any_system_planet = {
+									has_planet_flag = mem_eden_protocol_terraforming_candidate
+								}
+							}
 						}
-						modify_species = {
-							species = this
-							ideal_planet_class = home_planet
+						random_system_planet = {
+							limit = {
+								is_star = no
+								planet_size > 8
+								planet_size < 26
+							}
+							clear_deposits = yes
+							clear_planet_modifiers = yes
+							change_pc = pc_barren
+							add_modifier = {
+								modifier = terraforming_candidate
+							}
+							set_planet_flag = mem_eden_protocol_terraforming_candidate
 						}
-					}
-					set_citizenship_type = {
-						country = root.owner
-						type = citizenship_limited
-					}
-					set_living_standard = {
-						country = root.owner
-						type = living_standard_organic_trophy
-					}
+					}			
 				}
-				while = {
-					count = 5
-					create_pop = {
-						species = last_created_species
-						ethos = random
+			}			
+			solar_system = {
+				starbase = {
+					remove_starbase_building = {
+						building = hydroponics_bay
 					}
-					last_created_pop = {
-						clear_ethos = yes
+					set_starbase_building = {
+						slot = 1
+						building = crew_quarters
 					}
 				}
 			}
+		#	solar_system = {
+		#		random_system_planet = {
+		#			limit = {
+		#				exists = owner
+		#				owner = {
+		#					is_country_type = primitive
+		#				}
+		#			}
+		#			# I fail to find a way to spawn an observation station
+		#		}
+		#	}
 		}		
 	}
 }
 
 #test for yearly pulse event
 country_event = {
-	id = mem_eden_protocol.1001
+	id = mem_eden_protocol.2
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -88,6 +129,16 @@ country_event = {
 	}
 
 	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = mem_eden_protocol_changed_direction
+				}
+			}
+			set_policy_cooldown = interference
+			set_policy_cooldown = enlightenment
+		}
+		
 		every_owned_planet = {
 			limit = {
 				is_planet_class = pc_habitat
@@ -124,7 +175,7 @@ country_event = {
 										exists = owner
 									}
 								}
-								generate_early_pre_ftls_on_planet = yes
+								generate_very_early_pre_ftls_on_planet = yes
 							}
 						}
 						owner = {
@@ -137,6 +188,51 @@ country_event = {
 					}
 				}
 				reroll_random = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						has_building = building_mem_eden_protocol_seeder_1
+						has_building = building_mem_eden_protocol_seeder_2
+						has_building = building_mem_eden_protocol_seeder_3
+					}
+					solar_system = {
+						any_system_planet = {
+							exists = owner
+							owner = {
+								is_country_type = primitive
+								OR = {
+									has_country_flag = machine_age
+									has_country_flag = atomic_age
+									has_country_flag = early_space_age
+								}
+							}
+						}
+					}
+				}
+				solar_system = {
+					every_system_planet = {
+						limit = {
+							exists = owner
+							owner = {
+								is_country_type = primitive
+								OR = {
+									has_country_flag = machine_age
+									has_country_flag = atomic_age
+									has_country_flag = early_space_age
+								}
+							}
+						}
+						owner = {					
+							random_situation = {
+								limit = {
+									is_situation_type = pre_ftl_tech_progress_situation
+								}
+								set_situation_flag = tech_frozen
+							}
+						}
+					}
+				}
 			}
 			if = {
 				limit = {
@@ -187,7 +283,7 @@ country_event = {
 									
 								}
 								change_pc = rl_habitable_normal
-								reset_planet = yes
+								reroll_planet = yes
 							}
 						}
 						owner = {

@@ -167,7 +167,10 @@ origin_mem_eden_protocol = {
 	max_once_global = yes
 
 	starting_colony = pc_habitat
-	initializers = { void_dweller_system mem_eden_protocol_sol_system_void_dweller_system }
+	initializers = { 
+		mem_eden_protocol_void_dweller_system
+		mem_eden_protocol_sol_system_void_dweller_system
+	}
 	#habitability_preference = pc_habitat
 	preferred_planet_class_neighbor = no
 

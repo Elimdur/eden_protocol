@@ -1,5 +1,13 @@
+# this = country
 on_game_start_country = {
 	events = {
 		mem_eden_protocol.1
+	}
+}
+
+# this = country
+on_yearly_pulse_country = {
+	events = {
+		mem_eden_protocol.2
 	}
 }

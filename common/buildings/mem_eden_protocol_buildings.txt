@@ -59,13 +59,39 @@ building_mem_eden_protocol_seeder_1 = {
 		}
 	}
 
+	on_destroy = {
+		solar_system = {
+			every_system_planet = {
+				limit = {
+					exists = owner
+					owner = {
+						is_country_type = primitive
+						OR = {
+							has_country_flag = machine_age
+							has_country_flag = atomic_age
+							has_country_flag = early_space_age
+						}
+					}
+				}
+				owner = {					
+					random_situation = {
+						limit = {
+							is_situation_type = pre_ftl_tech_progress_situation
+						}
+						remove_situation_flag = tech_frozen
+					}
+				}
+			}
+		}
+	}
+
 	resources = {
 		category = planet_buildings
 		cost = {
-			energy = 1500
+			minerals =  500
 		}
 		upkeep = {
-			energy = 20
+			energy = 5
 		}
 	}
 
@@ -163,6 +189,10 @@ building_mem_eden_protocol_seeder_1 = {
 		}
 		job_mem_caretaker_drone_add = 1
 	}
+
+	ai_weight = {
+		weight = 1000
+	}#Always build the pop to work it can come later.
 }
 
 building_mem_eden_protocol_seeder_2 = {
@@ -175,11 +205,11 @@ building_mem_eden_protocol_seeder_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			energy = 1500
+			minerals = 1000
 			exotic_gases = @b2_rare_cost
 		}
 		upkeep = {
-			energy = 20
+			energy = 10
 			exotic_gases = @b2_rare_upkeep
 		}
 	}
@@ -213,6 +243,32 @@ building_mem_eden_protocol_seeder_2 = {
 		}
 	}
 
+	on_destroy = {
+		solar_system = {
+			every_system_planet = {
+				limit = {
+					exists = owner
+					owner = {
+						is_country_type = primitive
+						OR = {
+							has_country_flag = machine_age
+							has_country_flag = atomic_age
+							has_country_flag = early_space_age
+						}
+					}
+				}
+				owner = {					
+					random_situation = {
+						limit = {
+							is_situation_type = pre_ftl_tech_progress_situation
+						}
+						remove_situation_flag = tech_frozen
+					}
+				}
+			}
+		}
+	}
+
 	planet_modifier = {
 		job_mem_seeder_drone_add = 2
 	}
@@ -307,6 +363,10 @@ building_mem_eden_protocol_seeder_2 = {
 		}
 		job_mem_caretaker_drone_add = 2
 	}
+
+	ai_weight = {
+		weight = 1000
+	}#Always build the pop to work it can come later.
 }
 
 building_mem_eden_protocol_seeder_3 = {
@@ -318,11 +378,11 @@ building_mem_eden_protocol_seeder_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			energy = 1500
+			minerals = 1500
 			exotic_gases = @b3_rare_cost
 		}
 		upkeep = {
-			energy = 20
+			energy = 15
 			exotic_gases = @b3_rare_upkeep
 		}
 	}
@@ -356,6 +416,38 @@ building_mem_eden_protocol_seeder_3 = {
 		}
 	}
 
+	on_destroy = {
+		solar_system = {
+			every_system_planet = {
+				limit = {
+					exists = owner
+					owner = {
+						is_country_type = primitive
+						OR = {
+							has_country_flag = machine_age
+							has_country_flag = atomic_age
+							has_country_flag = early_space_age
+						}
+					}
+				}
+				owner = {					
+					random_situation = {
+						limit = {
+							is_situation_type = pre_ftl_tech_progress_situation
+						}
+						remove_situation_flag = tech_frozen
+					}
+				}
+			}
+		}
+	}
+
+	potential = {
+		owner = {
+			has_country_flag = mem_eden_protocol_seeder_3_allowed
+		}
+	}
+
 	planet_modifier = {
 		job_mem_seeder_drone_add = 2
 	}
@@ -450,6 +542,10 @@ building_mem_eden_protocol_seeder_3 = {
 		}
 		job_mem_caretaker_drone_add = 3
 	}
+
+	ai_weight = {
+		weight = 1000
+	}#Always build the pop to work it can come later.
 }
 
 building_mem_eden_protocol_terraformer_1 = {
@@ -458,6 +554,16 @@ building_mem_eden_protocol_terraformer_1 = {
 	category = unity
 	can_be_disabled = no
 	upgrades = { "building_mem_eden_protocol_terraformer_2" }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
 
 	potential = {
 		is_planet_class = pc_habitat
@@ -513,19 +619,13 @@ building_mem_eden_protocol_terraformer_1 = {
 		}
 	}
 
-	resources = {
-		category = planet_buildings
-		cost = {
-			energy = 1500
-		}
-		upkeep = {
-			energy = 20
-		}
-	}
-
 	planet_modifier = {
 		planet_administrators_unity_produces_add = 2
 	}
+
+	ai_weight = {
+		weight = 1000
+	}#Always build the pop to work it can come later.
 }
 
 building_mem_eden_protocol_terraformer_2 = {
@@ -537,7 +637,7 @@ building_mem_eden_protocol_terraformer_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			energy = 1500
+			minerals = 1500
 			exotic_gases = @b3_rare_cost
 		}
 		upkeep = {
@@ -545,7 +645,7 @@ building_mem_eden_protocol_terraformer_2 = {
 			exotic_gases = @b3_rare_upkeep
 		}
 	}
-
+	
 	destroy_trigger = {
 		OR = {
 			NOT = { exists = owner }
@@ -575,7 +675,17 @@ building_mem_eden_protocol_terraformer_2 = {
 		}
 	}
 
+	potential = {
+		owner = {
+			has_country_flag = mem_eden_protocol_gaiaforming_allowed
+		}
+	}
+
 	planet_modifier = {
 		planet_administrators_unity_produces_add = 4
 	}
+
+	ai_weight = {
+		weight = 1000
+	}#Always build the pop to work it can come later.
 }

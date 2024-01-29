@@ -1,6 +1,6 @@
 @jumps = 3
 
-# Sol System - Void-Dweller Origins Edition
+# Sol System - EDEN Protocol Origins Edition
 mem_eden_protocol_sol_system_void_dweller_system = {
 	name = "NAME_Sol_Void_Dweller"
 
@@ -87,6 +87,7 @@ mem_eden_protocol_sol_system_void_dweller_system = {
 			ignore_startup_effect
 			habitat_1_planet
 			has_megastructure
+			mem_eden_protocol_old_homeworld
 		}
 
 		init_effect = {
@@ -133,7 +134,7 @@ mem_eden_protocol_sol_system_void_dweller_system = {
 		flags = { planet_mars }
 
 		init_effect = {
-			generate_early_pre_ftls_on_planet = yes
+			generate_very_early_pre_ftls_on_planet = yes
 		}
 	}
 
@@ -344,5 +345,239 @@ mem_eden_protocol_sol_system_void_dweller_system = {
 		trigger = { num_guaranteed_colonies = 0 }
 		hyperlane_jumps = { min = 1 max = @jumps }
 		initializer = "sol_neighbor_t1_no_guaranteed_colony"
+	}
+}
+
+# EDEN Protocol Origins Home System
+mem_eden_protocol_void_dweller_system = {
+	class = "rl_trinary_stars"
+	usage = origin
+	flags = { empire_home_system }
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = { min = 30 max = 35 }
+		has_ring = no
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 240
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 20 max = 30 }
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+
+		change_orbit = 30
+
+		planet = {
+			orbit_angle = { min = 90 max = 270 }
+			class = random_non_colonizable
+			orbit_distance = 25
+			satellite_naming_policy = lower_case_latin_letters
+
+			change_orbit = @base_moon_distance
+
+			moon = {
+				count = { min = 0 max = 1 }
+				class = random_non_colonizable
+				orbit_angle = { min = 90 max = 270 }
+				orbit_distance = 5
+			}
+		}
+
+		planet = {
+			class = pc_barren_cold
+			orbit_distance = 25
+			orbit_angle = { min = 90 max = 270 }
+			size = { min = 16 max = 20 }
+			flags = { ignore_startup_effect habitat_2_planet has_megastructure }
+			has_ring = yes
+
+			init_effect = {
+				set_deposit = d_minerals_4
+			}
+		}
+
+		 planet = {
+			orbit_angle = { min = 90 max = 270 }
+			class = pc_gas_giant
+			orbit_distance = 25
+			satellite_naming_policy = lower_case_latin_letters
+			flags = { ignore_startup_effect mining_planet }
+
+			init_effect = {
+				set_deposit = d_energy_6
+			}
+
+			change_orbit = @base_moon_distance
+
+			moon = {
+				count = { min = 0 max = 1 }
+				class = random_non_colonizable
+				orbit_angle = { min = 90 max = 270 }
+				orbit_distance = 5
+			}
+		}
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 15 max = 30 }
+		has_ring = no
+		satellite_naming_policy = upper_case_roman_numerals
+
+		change_orbit = 30
+
+		planet = {
+			orbit_angle = { min = 90 max = 270 }
+			class = rl_habitable_normal
+			orbit_distance = 25
+			satellite_naming_policy = lower_case_latin_letters
+
+			init_effect = {
+				generate_very_early_pre_ftls_on_planet = yes
+			}
+
+			change_orbit = @base_moon_distance
+
+			moon = {
+				count = 1
+				class = random_non_colonizable
+				orbit_angle = { min = 90 max = 270 }
+				orbit_distance = 5
+				flags = { ignore_startup_effect }
+
+				init_effect = {
+					set_deposit = d_minerals_2
+				}
+			}
+		}
+
+		planet = {
+			orbit_angle = { min = 90 max = 270 }
+			class = random_non_colonizable
+			orbit_distance = 25
+			satellite_naming_policy = lower_case_latin_letters
+
+			change_orbit = @base_moon_distance
+
+			moon = {
+				count = 1
+				class = random_non_colonizable
+				orbit_angle = { min = 90 max = 270 }
+				orbit_distance = 5
+				flags = { ignore_startup_effect }
+			}
+		}
+
+		planet = {
+			class = pc_gas_giant
+			orbit_distance = 25
+			orbit_angle = { min = 90 max = 270 }
+			#size = { min = 16 max = 20 }
+			flags = { ignore_startup_effect habitat_3_planet has_megastructure }
+
+			init_effect = {
+				set_deposit = d_energy_4
+			}
+		}
+	}
+
+	change_orbit = -210
+
+	planet = {
+		orbit_angle = { min = 90 max = 270 }
+		class = pc_molten
+		orbit_distance = 15
+
+		flags = { ignore_startup_effect mining_planet }
+
+		init_effect = {
+			set_deposit = d_energy_4
+		}
+	}
+
+	planet = {
+		orbit_angle = { min = 90 max = 270 }
+		class = random_non_colonizable
+		orbit_distance = 15
+
+		flags = { ignore_startup_effect mining_planet }
+
+		init_effect = {
+			set_deposit = d_minerals_4
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		class = pc_toxic
+		name = "NAME_Toxic_Veil"
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 16 max = 20 }
+		flags = { 
+			ignore_startup_effect 
+			has_megastructure 
+			habitat_1_planet 
+			mem_eden_protocol_old_homeworld
+		}
+
+		init_effect = {
+			set_deposit = d_physics_3
+		}
+
+		moon = {
+			class = pc_habitat
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+			size = 6
+			starting_planet = yes
+			flags = { void_dweller_habitat_1 special_start_planet megastructure habitat }
+			deposit_blockers = none
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		class = pc_gas_giant
+		orbit_angle = { min = 90 max = 270 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 1 max = 2 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1_first_colony"
 	}
 }
