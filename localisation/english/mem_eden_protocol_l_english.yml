@@ -4,10 +4,15 @@
 
  origin_mem_eden_protocol:0 "E.D.E.N. Protocol"
  origin_mem_eden_protocol_desc:0 "The Environmental Diversity Expansion Network Protocol was initiated by the inhabitants of a doomed world without the means to save their own civilization. Without FTL-technology or the industrial base to move a significant portion of their population into space habitats, they did what was within their power and created a small station housing a database of their entire biosphere's DNA. An AI was put in place to saveguard and expand the facility in order to eventually seed new life on far planets."
+ START_SCREEN_MEM_EDEN_PROTOCOL:0 "TEST"
+ origin_tooltip_mem_eden_protocol_effects:0 "- $HOMEWORLD$ ['concept_pc_habitat']$NEW_LINE$- $SPECIES_TRAITS$$TABBED_NEW_LINE$- ['concept_mem_machine_void_dweller', $mem_machine_trait_void_dweller_1$]$NEW_LINE$- $ADDITONAL_TECHNOLOGIES_STRING$ ['concept_habitat_1', £engineering_research£ $tech_habitat_1$]$NEW_LINE$- $GUARANTEED_RESEARCH_OPTION_STRING$ ['concept_habitat_2', £engineering_research£ $tech_habitat_2$]$NEW_LINE$- ['concept_guaranteed_colonies']: Resource-rich systems instead of Colonizable Planets $NEW_LINE$- $ap_voidborn_habitat_effect$"
+
+ concept_mem_machine_void_dweller: "$mem_machine_trait_void_dweller_1$"
+ concept_mem_machine_void_dweller_desc: "- $mod_habitat_jobs_produces_mult$: §G+10%§!\n- $mod_non_artificial_planet_jobs_produces_mult$: §R-30%§!\n\n§L$mem_machine_trait_void_dweller_1_desc$§!"
 
  mem_machine_trait_void_dweller_1:0 "$trait_void_dweller_1$"
  mem_machine_trait_void_dweller_1_desc:0 "This machine's programming dictates its operation to take place off-world. Being in breach with this command lowers its productivity significantly."
-
+ 
  building_mem_eden_protocol_seeder_1:0 "Seeding and Caretaking Hub"
  building_mem_eden_protocol_seeder_1_desc:0 "REPLACE_ME"
  building_mem_eden_protocol_seeder_2:0 "Seeding and Caretaking Network"

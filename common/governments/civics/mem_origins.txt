@@ -189,7 +189,7 @@ origin_mem_eden_protocol = {
 		}
 	}
 
-	description = "origin_tooltip_void_dwellers_effects"
+	description = "origin_tooltip_mem_eden_protocol_effects"
 
 	potential = {
 		species_archetype = { value = MACHINE }
