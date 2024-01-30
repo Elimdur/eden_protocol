@@ -1,0 +1,13 @@
+#TODO: search for good icon
+
+message_type = {
+	key = "MESSAGE_MEM_GOT_PRIMITIVE"
+	icon = "GFX_trime_hourglass_tick"
+	icon_frame = 1
+
+	name = "MESSAGE_MEM_GOT_PRIMITIVE"
+	sound = "notification"
+	ping = "ping_notification_green"
+
+	category = diplomacy
+}

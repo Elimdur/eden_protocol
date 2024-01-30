@@ -1,16 +1,12 @@
 namespace = mem_eden_protocol
-
 # fired at gamestart to setup the habitat
 country_event = {
 	id = mem_eden_protocol.1
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	trigger = {
 		has_origin = origin_mem_eden_protocol
 	}
-
 	immediate = {
 		set_country_flag = encountered_first_primitive
 		set_policy = {
@@ -88,9 +84,9 @@ country_event = {
 							}
 							set_planet_flag = mem_eden_protocol_terraforming_candidate
 						}
-					}			
+					}
 				}
-			}			
+			}
 			solar_system = {
 				starbase = {
 					remove_starbase_building = {
@@ -102,18 +98,18 @@ country_event = {
 					}
 				}
 			}
-		#	solar_system = {
-		#		random_system_planet = {
-		#			limit = {
-		#				exists = owner
-		#				owner = {
-		#					is_country_type = primitive
-		#				}
-		#			}
-		#			# I fail to find a way to spawn an observation station
-		#		}
-		#	}
-		}		
+			#	solar_system = {
+			#		random_system_planet = {
+			#			limit = {
+			#				exists = owner
+			#				owner = {
+			#					is_country_type = primitive
+			#				}
+			#			}
+			#			# I fail to find a way to spawn an observation station
+			#		}
+			#	}
+		}
 	}
 }
 
@@ -121,13 +117,10 @@ country_event = {
 country_event = {
 	id = mem_eden_protocol.2
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	trigger = {
 		has_origin = origin_mem_eden_protocol
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -138,7 +131,6 @@ country_event = {
 			set_policy_cooldown = interference
 			set_policy_cooldown = enlightenment
 		}
-		
 		every_owned_planet = {
 			limit = {
 				is_planet_class = pc_habitat
@@ -165,7 +157,8 @@ country_event = {
 					}
 				}
 				random_list = {
-					80 = {}
+					80 = {
+					}
 					20 = {
 						solar_system = {
 							random_system_planet = {
@@ -184,7 +177,7 @@ country_event = {
 								years = 2
 							}
 							# give notification
-						}						
+						}
 					}
 				}
 				reroll_random = yes
@@ -223,7 +216,7 @@ country_event = {
 								}
 							}
 						}
-						owner = {					
+						owner = {
 							random_situation = {
 								limit = {
 									is_situation_type = pre_ftl_tech_progress_situation
@@ -263,7 +256,8 @@ country_event = {
 					}
 				}
 				random_list = {
-					90 = {}
+					90 = {
+					}
 					10 = {
 						solar_system = {
 							random_system_planet = {
@@ -280,7 +274,6 @@ country_event = {
 											is_country_type = primitive
 										}
 									}
-									
 								}
 								change_pc = rl_habitable_normal
 								reroll_planet = yes
@@ -292,7 +285,7 @@ country_event = {
 								years = 3
 							}
 							# give notification
-						}						
+						}
 					}
 				}
 				reroll_random = yes
@@ -312,7 +305,8 @@ country_event = {
 					}
 				}
 				random_list = {
-					90 = {}
+					90 = {
+					}
 					10 = {
 						solar_system = {
 							random_system_planet = {
@@ -328,7 +322,7 @@ country_event = {
 								years = 3
 							}
 							# give notification
-						}						
+						}
 					}
 				}
 				reroll_random = yes
@@ -359,7 +353,8 @@ country_event = {
 					}
 				}
 				random_list = {
-					90 = {}
+					90 = {
+					}
 					10 = {
 						solar_system = {
 							random_system_planet = {
@@ -386,7 +381,7 @@ country_event = {
 								years = 3
 							}
 							# give notification
-						}						
+						}
 					}
 				}
 				reroll_random = yes
@@ -395,6 +390,394 @@ country_event = {
 				which = mem_eden_protocol_caretaker_variable
 				value = value:mem_eden_protocol_caretaker_value
 			}
-		}		
+		}
+	}
+}
+
+## situation events 
+### TODO: event pictures 101-105
+situation_event = {
+	id = mem_eden_protocol.101
+	title = "mem_eden_protocol.101.name"
+	picture = GFX_evt_habitat
+	is_triggered_only = yes
+	desc = "mem_eden_protocol.101.desc"
+	trigger = {
+		always = yes
+	}
+	option = {
+		# habitat building slots
+		name = mem_eden_protocol.101.a
+		owner = {
+			add_modifier = {
+				modifier = mem_eden_protocol_habitat_building_slots
+			}
+		}
+	}
+	option = {
+		# habitat housing
+		name = mem_eden_protocol.101.b
+		owner = {
+			add_modifier = {
+				modifier = mem_eden_protocol_habitat_housing
+			}
+		}
+	}
+	option = {
+		# unity
+		name = mem_eden_protocol.101.c
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 12
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = mem_eden_protocol.102
+	title = "mem_eden_protocol.102.name"
+	picture = GFX_evt_habitat
+	is_triggered_only = yes
+	desc = "mem_eden_protocol.102.desc"
+	trigger = {
+		always = yes
+	}
+	option = {
+		# uncover arc site
+		name = mem_eden_protocol.102.a
+		owner = {
+			home_planet = {
+				solar_system = {
+					random_system_planet = {
+						limit = {
+							is_planet_class = pc_toxic
+						}
+						create_archaeological_site = mem_eden_protocol_devolve_relic_digsite
+					}
+				}
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = mem_eden_protocol.103
+	title = "mem_eden_protocol.103.name"
+	picture = GFX_evt_habitat
+	is_triggered_only = yes
+	desc = "mem_eden_protocol.103.desc"
+	trigger = {
+		always = yes
+	}
+	option = {
+		# habitat district slots
+		name = mem_eden_protocol.103.a
+		owner = {
+			add_modifier = {
+				modifier = mem_eden_protocol_habitat_districts
+			}
+		}
+	}
+	option = {
+		# habitat jobs per district
+		name = mem_eden_protocol.103.b
+		owner = {
+			add_modifier = {
+				modifier = mem_eden_protocol_habitat_jobs
+			}
+		}
+	}
+	option = {
+		name = mem_eden_protocol.103.c
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 18
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = mem_eden_protocol.104
+	title = "mem_eden_protocol.104.name"
+	picture = GFX_evt_habitat
+	is_triggered_only = yes
+	desc = "mem_eden_protocol.104.desc"
+	trigger = {
+		always = yes
+	}
+	option = {
+		# flat empire size from caretakers
+		name = mem_eden_protocol.104.a
+		owner = {
+			custom_tooltip = mem_eden_protocol.104.a.tt
+			hidden_effect = {
+				owner = {
+					set_country_flag = mem_eden_protocol_empire_size_per_job
+				}
+			}
+		}
+	}
+	option = {
+		# research speed
+		name = mem_eden_protocol.104.b
+		owner = {
+			add_modifier = {
+				modifier = mem_eden_protocol_research
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = mem_eden_protocol.105
+	title = "mem_eden_protocol.105.name"
+	picture = GFX_evt_habitat
+	is_triggered_only = yes
+	desc = "mem_eden_protocol.105.desc"
+	trigger = {
+		always = yes
+	}
+	option = {
+		# stay caretaker
+		name = mem_eden_protocol.105.a
+		owner = {
+			add_modifier = {
+				modifier = mem_eden_protocol_civic_point
+			}
+			custom_tooltip = mem_eden_protocol.105.a.tt			# unlock gaia forming and final building tier, pre ftl boost unity, get full machine world bonus from building
+			hidden_effect = {
+				owner = {
+					set_country_flag = mem_eden_protocol_stayed_caretaker
+					set_country_flag = mem_eden_protocol_seeder_3_allowed
+				}
+			}
+		}
+	}
+	option = {
+		# become rouge servitor
+		name = mem_eden_protocol.105.b
+		owner = {
+			add_modifier = {
+				modifier = mem_eden_protocol_civic_point
+			}
+			force_add_civic = civic_machine_servitor
+			custom_tooltip = mem_eden_protocol.105.b.tt			# periodic pops, caretaker produce consumer goods
+		}
+	}
+	option = {
+		# become assimilator
+		name = mem_eden_protocol.105.c
+		owner = {
+			add_modifier = {
+				modifier = mem_eden_protocol_civic_point
+			}
+			force_add_civic = civic_machine_assimilator
+			custom_tooltip = mem_eden_protocol.105.c.tt			# caretaker boost cybernetic pops, building can be build everywhere, invade all pre-ftl
+			hidden_effect = {
+				owner = {
+					every_pre_ftl_within_border = {
+						set_hostile = root.owner
+						capital_scope = {
+							create_army = {
+								owner = root.owner
+								type = machine_assault_2
+							}
+							create_army = {
+								owner = root.owner
+								type = machine_assault_2
+							}
+							create_army = {
+								owner = root.owner
+								type = machine_assault_2
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# devolve_relic arc site events
+fleet_event = {
+	id = mem_eden_protocol.111
+	title = "mem_eden_protocol.111.name"
+	desc = "mem_eden_protocol.111.desc"
+	picture = GFX_evt_baol_datacrystals
+	show_sound = event_dig_site
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = {
+			set_site_progress_locked = yes
+		}
+	}
+	after = {
+		from = {
+			set_site_progress_locked = no
+		}
+	}
+	option = {
+		name = mem_eden_protocol.111.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = mem_eden_protocol.112
+	title = "mem_eden_protocol.112.name"
+	desc = "mem_eden_protocol.112.desc"
+	picture = GFX_evt_baol_datacrystals
+	show_sound = event_dig_site
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = {
+			set_site_progress_locked = yes
+		}
+	}
+	after = {
+		from = {
+			set_site_progress_locked = no
+		}
+	}
+	option = {
+		name = mem_eden_protocol.112.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = mem_eden_protocol.113
+	title = "mem_eden_protocol.113.name"
+	desc = "mem_eden_protocol.113.desc"
+	picture = GFX_evt_baol_datacrystals
+	show_sound = event_dig_site
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = {
+			set_site_progress_locked = yes
+		}
+	}
+	after = {
+		from = {
+			set_site_progress_locked = no
+		}
+	}
+	option = {
+		name = mem_eden_protocol.113.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = mem_eden_protocol.114
+	title = "mem_eden_protocol.114.name"
+	desc = "mem_eden_protocol.114.desc"
+	picture = GFX_evt_baol_datacrystals
+	show_sound = event_dig_site
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+		from = {
+			set_site_progress_locked = yes
+		}
+	}
+	after = {
+		from = {
+			set_site_progress_locked = no
+		}
+	}
+	option = {
+		name = mem_eden_protocol.114.a
+		owner = {
+			add_relic = r_mem_eden_protocol_devolve_relic
+		}
+	}
+}
+
+# on action get primitive to pamper
+planet_event = {
+	id = mem_eden_protocol.121
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_building = building_mem_eden_protocol_seeder_1
+			has_building = building_mem_eden_protocol_seeder_2
+			has_building = building_mem_eden_protocol_seeder_3
+		}
+		exists = owner
+		owner = {
+			has_origin = origin_mem_eden_protocol
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	immediate = {
+		solar_system = {
+			random_system_planet = {
+				limit = {
+					habitable_planet_not_urban = yes
+					OR = {
+						NOT = {
+							exists = owner
+						}
+						AND = {
+							exists = owner
+							owner = {
+								is_country_type = primitive
+							}
+						}
+					}
+				}
+				owner = {
+					owner_main_species = {
+						save_event_target_as = mem_primitive_target
+					}
+					
+				}
+			}
+		}
+		create_pop = {
+			species = mem_primitive_target
+		}
+		create_message = {
+			type = MESSAGE_MEM_GOT_PRIMITIVE
+			localization = MESSAGE_MEM_GOT_PRIMITIVE
+			days = 30
+			target = this
+			variable = {
+				type = name
+				localization = PLANET
+				scope = this
+			}			
+		}
+		
 	}
 }

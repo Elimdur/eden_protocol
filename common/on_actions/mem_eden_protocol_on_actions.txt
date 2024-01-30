@@ -11,3 +11,9 @@ on_yearly_pulse_country = {
 		mem_eden_protocol.2
 	}
 }
+
+on_colony_10_year_pulse = {
+	events = {
+		mem_eden_protocol.121 # get primitive species
+	}
+}
