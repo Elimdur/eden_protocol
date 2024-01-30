@@ -16,10 +16,24 @@ mem_machine_trait_void_dweller_1 = {
 	allowed_archetypes = { MACHINE }
 	sorting_priority = 30
 
+	custom_tooltip_with_modifiers = mem_machine_trait_void_dweller_1_tooltip
+
 	modifier = {
 		habitat_jobs_produces_mult = 0.10
 		non_artificial_planet_jobs_produces_mult = -0.30
 	}
+
+	triggered_pop_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_edict = mem_protocol_synchronicity
+			}
+		}
+		planet_jobs_produces_mult = 0.02
+		mult = event_target:mem_eden_protocol_country.mem_eden_protocol_cared_primitives_number_country
+	}
+
 	ai_weight = {
 		weight = 0
 	}

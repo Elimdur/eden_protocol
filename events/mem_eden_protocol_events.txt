@@ -8,6 +8,7 @@ country_event = {
 		has_origin = origin_mem_eden_protocol
 	}
 	immediate = {
+		save_global_event_target_as = mem_eden_protocol_country
 		set_country_flag = encountered_first_primitive
 		set_policy = {
 			policy = interference
@@ -130,6 +131,10 @@ country_event = {
 			}
 			set_policy_cooldown = interference
 			set_policy_cooldown = enlightenment
+		}
+		set_variable = {
+			which = mem_eden_protocol_cared_primitives_number_country
+			value = 0
 		}
 		every_owned_planet = {
 			limit = {
@@ -386,11 +391,30 @@ country_event = {
 				}
 				reroll_random = yes
 			}
+			save_event_target_as = mem_eden_protocol_habitat
 			set_variable = {
 				which = mem_eden_protocol_caretaker_variable
 				value = value:mem_eden_protocol_caretaker_value
 			}
+			owner = {
+				change_variable = {
+					which = mem_eden_protocol_cared_primitives_number_country
+					value = event_target:mem_eden_protocol_habitat.mem_eden_protocol_caretaker_variable
+				}
+			}			
 		}
+		if = {
+			limit = {
+				check_variable = {
+					which = mem_eden_protocol_cared_primitives_number_country
+					value > 25
+				}
+			}
+			set_variable = {
+				which = mem_eden_protocol_cared_primitives_number_country
+				value = 25
+			}
+		}		
 	}
 }
 
