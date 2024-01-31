@@ -16,10 +16,20 @@ situation_mem_eden_protocol_protocolswill = {
 	start_value = 0
 	stages = {
 		#choices
+		situation_mem_eden_protocol_protocolswill_stage0 = {
+			icon = GFX_situation_stage_pre_ftl
+			icon_background = GFX_situation_stage_frame_green
+			end = 100
+			on_first_enter = {
+				#situation_event = {
+				#	id = mem_eden_protocol.101
+				#}
+			}
+		}
 		situation_mem_eden_protocol_protocolswill_stage1 = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_green
-			end = 100
+			end = 200
 			on_first_enter = {
 				situation_event = {
 					id = mem_eden_protocol.101
@@ -29,7 +39,7 @@ situation_mem_eden_protocol_protocolswill = {
 		situation_mem_eden_protocol_protocolswill_stage2 = {
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_green
-			end = 200
+			end = 300
 			on_first_enter = {
 				situation_event = {
 					id = mem_eden_protocol.102
@@ -39,7 +49,7 @@ situation_mem_eden_protocol_protocolswill = {
 		situation_mem_eden_protocol_protocolswill_stage3 = {
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_green
-			end = 300
+			end = 400
 			on_first_enter = {
 				situation_event = {
 					id = mem_eden_protocol.103
@@ -49,7 +59,7 @@ situation_mem_eden_protocol_protocolswill = {
 		situation_mem_eden_protocol_protocolswill_stage4 = {
 			icon = GFX_situation_stage_4
 			icon_background = GFX_situation_stage_frame_green
-			end = 400
+			end = 500
 			on_first_enter = {
 				situation_event = {
 					id = mem_eden_protocol.104
@@ -76,7 +86,7 @@ situation_mem_eden_protocol_protocolswill = {
 		icon = GFX_situation_approach_balance_sheet
 		icon_background = GFX_situation_approach_bg_green
 		on_select = {
-			#custom_tooltip = favor_insights_tt
+			custom_tooltip = "mem_eden_protocol_empty"
 		}
 		default = yes
 	}
@@ -84,13 +94,15 @@ situation_mem_eden_protocol_protocolswill = {
 		name = approach_mem_eden_protocol_protocolswill_2
 		icon = GFX_situation_approach_research
 		icon_background = GFX_situation_approach_bg_yellow
-		on_select = {
-			#custom_tooltip = studying_insights_tt
+		#on_select = {
+		#custom_tooltip = studying_insights_tt
+		#}
+		resources = {
+			category = situations
+			upkeep = {
+				unity = 20
+			}
 		}
-		modifier = {
-			country_unity_produces_add = -20
-		}
-		
 	}
 	#abort_trigger = {}
 }

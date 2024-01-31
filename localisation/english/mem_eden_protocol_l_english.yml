@@ -41,30 +41,30 @@
  mod_job_mem_seeder_drone_add:0 "$job_mem_seeder_drone$ Jobs"
  job_mem_seeder_drone_effect_desc:0 "£job_mem_seeder_drone£ $job_mem_seeder_drone_plural$ turn £energy£ §Y$energy$§! into £unity£ §Y$unity$§! and £society£ §YResearch Points§!"
 
-# sry about this :), will fix when im doing locs
- mem_eden_protocol_devolve_relic_digsite:0 "REPLACE_ME"
+# 
+ mem_eden_protocol_devolve_relic_digsite:0 "A night to remember"
  mem_eden_protocol_devolve_relic_digsite_desc:0 "REPLACE_ME"
 
- MESSAGE_MEM_GOT_PRIMITIVE:0 "REPLACE_ME"
+ MESSAGE_MEM_GOT_PRIMITIVE:0 "Primitives gained"
 
- r_mem_eden_protocol_devolve_relic:0 "REPLACE_ME"
+ r_mem_eden_protocol_devolve_relic:0 "Last Protocol"
  r_mem_eden_protocol_devolve_relic_desc:0 "REPLACE_ME"
  r_mem_eden_protocol_devolve_relic_passive_tt:0 "REPLACE_ME"
 
- situation_mem_eden_protocol_protocolswill:0 "REPLACE_ME"
+ situation_mem_eden_protocol_protocolswill:0 "The Protocol's Will"
  situation_mem_eden_protocol_protocolswill_type:0 "REPLACE_ME"
  situation_mem_eden_protocol_protocolswill_monthly_change_tooltip:0 "REPLACE_ME"
  situation_mem_eden_protocol_protocolswill_final_choice:0 "REPLACE_ME"
  string_mem_eden_protocol_protocolswill:0 "REPLACE_ME"
- approach_mem_eden_protocol_protocolswill_1:0 "REPLACE_ME"
- approach_mem_eden_protocol_protocolswill_2:0 "REPLACE_ME"
+ approach_mem_eden_protocol_protocolswill_1:0 "100101"
+ approach_mem_eden_protocol_protocolswill_2:0 "111011"
 
- mem_eden_protocol_habitat_building_slots:0 "REPLACE_ME"
- mem_eden_protocol_habitat_housing:0 "REPLACE_ME"
- mem_eden_protocol_habitat_districts:0 "REPLACE_ME"
- mem_eden_protocol_habitat_jobs:0 "REPLACE_ME"
- mem_eden_protocol_research:0 "REPLACE_ME"
- mem_eden_protocol_civic_point:0 "REPLACE_ME"
+ mem_eden_protocol_habitat_building_slots:0 "Habitat Expansion Protocol"
+ mem_eden_protocol_habitat_housing:0 "$mem_eden_protocol_habitat_building_slots$"
+ mem_eden_protocol_habitat_districts:0 "$mem_eden_protocol_habitat_building_slots$"
+ mem_eden_protocol_habitat_jobs:0 "$mem_eden_protocol_habitat_building_slots$"
+ mem_eden_protocol_research:0 "Research Enhancement"
+ mem_eden_protocol_civic_point:0 "Protocol Expansion"
 
  mem_eden_protocol.101.name:0 "REPLACE_ME"
  mem_eden_protocol.101.desc:0 "REPLACE_ME"
@@ -104,3 +104,14 @@
  mem_eden_protocol.114.name:0 "REPLACE_ME"
  mem_eden_protocol.114.desc:0 "REPLACE_ME"
  mem_eden_protocol.114.a:0 "REPLACE_ME"
+
+ building_mem_eden_protocol_da_organicbooster_1:0 "Cybernetic Garden"
+ building_mem_eden_protocol_da_organicbooster_1_desc:0 "REPLACE_ME"
+ building_mem_eden_protocol_da_organicbooster_2:0 "Cybernetic Eden"
+ building_mem_eden_protocol_da_organicbooster_2_desc:0 "REPLACE_ME"
+ 
+ job_mem_organic_booster:0 "N.A.H.A.S Drone"
+ job_mem_organic_booster_plural:0 "N.A.H.A.S Drones"
+ job_mem_organic_booster_desc:0 "REPLACE_ME"
+ mod_job_mem_organic_booster_add:0 "$job_mem_organic_booster$ Jobs"
+ mem_eden_protocol_empty:0 ""

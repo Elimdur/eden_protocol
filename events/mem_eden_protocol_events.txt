@@ -20,6 +20,9 @@ country_event = {
 			option = enlightenment_not_allowed
 		}
 		set_policy_cooldown = enlightenment
+		start_situation = {
+			type = situation_mem_eden_protocol_protocolswill
+		}
 		capital_scope = {
 			remove_all_buildings = yes
 			remove_all_districts = yes
@@ -401,7 +404,7 @@ country_event = {
 					which = mem_eden_protocol_cared_primitives_number_country
 					value = event_target:mem_eden_protocol_habitat.mem_eden_protocol_caretaker_variable
 				}
-			}			
+			}
 		}
 		if = {
 			limit = {
@@ -414,12 +417,49 @@ country_event = {
 				which = mem_eden_protocol_cared_primitives_number_country
 				value = 25
 			}
-		}		
+		}
 	}
 }
 
 ## situation events 
 ### TODO: event pictures 101-105
+situation_event = {
+	# dummy event for fast sitatuion
+	id = mem_eden_protocol.100
+	title = "mem_eden_protocol.101.name"
+	picture = GFX_evt_habitat
+	is_triggered_only = yes
+	desc = "mem_eden_protocol.101.desc"
+	trigger = {
+		always = yes
+	}
+	option = {
+		# habitat building slots
+		name = mem_eden_protocol.101.a
+		add_situation_progress = 100
+	}
+	option = {
+		# habitat building slots
+		name = mem_eden_protocol.101.a
+		add_situation_progress = 200
+	}
+	option = {
+		# habitat building slots
+		name = mem_eden_protocol.101.a
+		add_situation_progress = 300
+	}
+	option = {
+		# habitat building slots
+		name = mem_eden_protocol.101.a
+		add_situation_progress = 400
+	}
+	option = {
+		# habitat building slots
+		name = mem_eden_protocol.101.a
+		add_situation_progress = 500
+	}
+}
+
 situation_event = {
 	id = mem_eden_protocol.101
 	title = "mem_eden_protocol.101.name"
@@ -601,25 +641,106 @@ situation_event = {
 			}
 			force_add_civic = civic_machine_assimilator
 			custom_tooltip = mem_eden_protocol.105.c.tt			# caretaker boost cybernetic pops, building can be build everywhere, invade all pre-ftl
+			set_policy = {
+				policy = interference
+				option = interference_aggressive
+			}
+			set_policy_cooldown = interference
 			hidden_effect = {
 				owner = {
-					every_pre_ftl_within_border = {
-						set_hostile = root.owner
-						capital_scope = {
-							create_army = {
-								owner = root.owner
-								type = machine_assault_2
-							}
-							create_army = {
-								owner = root.owner
-								type = machine_assault_2
-							}
-							create_army = {
-								owner = root.owner
-								type = machine_assault_2
+					every_owned_planet = {
+						limit = {
+							OR = {
+								has_building = building_mem_eden_protocol_seeder_1
+								has_building = building_mem_eden_protocol_seeder_2
+								has_building = building_mem_eden_protocol_seeder_3
+								has_building = building_mem_eden_protocol_terraformer_1
 							}
 						}
+						if = {
+							limit = {
+								has_building = building_mem_eden_protocol_seeder_1
+							}
+							remove_building = building_mem_eden_protocol_seeder_1
+							add_building = building_mem_eden_protocol_da_organicbooster_1
+						}
+						else_if = {
+							limit = {
+								has_building = building_mem_eden_protocol_seeder_2
+							}
+							remove_building = building_mem_eden_protocol_seeder_2
+							add_building = building_mem_eden_protocol_da_organicbooster_2
+						}
+						else_if = {
+							limit = {
+								has_building = building_mem_eden_protocol_seeder_3
+							}
+							remove_building = building_mem_eden_protocol_seeder_3
+							add_building = building_mem_eden_protocol_da_organicbooster_2
+						}
+						if = {
+							limit = {
+								has_building = building_mem_eden_protocol_terraformer_1
+							}
+							remove_building = building_mem_eden_protocol_terraformer_1
+						}
+						
 					}
+					every_pre_ftl_within_border = {
+
+						establish_communications = root.owner
+						owner = {
+							set_country_flag = pre_ftl_being_invaded
+							save_event_target_as = contact_empire
+							set_country_flag = first_contact_completed@root.owner
+							set_awareness = 100
+						}
+						root.owner = {
+							set_country_flag = first_contact_completed@event_target:contact_empire
+							country_event = {
+								id = action.2
+							}
+						}
+						set_hostile = root.owner
+						country_event = { #invade little later, immediate wont trigger ground combat
+							id = mem_eden_protocol.106
+							days = 30
+						}
+						#capital_scope = {
+						#	while = {
+						#		count = 3
+						#		create_army = {
+						#			name = random
+						#			owner = root.owner
+						#			species = root.owner_main_species
+						#			type = "machine_assault_2"
+						#		}
+						#	}
+						#}
+					}
+				}
+			}
+		}
+	}
+	after = {
+		destroy_situation = this
+	}
+}
+
+country_event = { # invade them
+	id = mem_eden_protocol.106
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		capital_scope = {
+			while = {
+				count = 3
+				create_army = {
+					name = random
+					owner = this.solar_system.owner
+					species = this.solar_system.owner.owner_main_species
+					type = "machine_assault_2"
 				}
 			}
 		}
@@ -781,10 +902,9 @@ planet_event = {
 					}
 				}
 				owner = {
-					owner_main_species = {
+					random_owned_pop = {
 						save_event_target_as = mem_primitive_target
 					}
-					
 				}
 			}
 		}
@@ -800,8 +920,7 @@ planet_event = {
 				type = name
 				localization = PLANET
 				scope = this
-			}			
+			}
 		}
-		
 	}
 }
