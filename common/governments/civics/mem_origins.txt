@@ -189,7 +189,7 @@ origin_mem_eden_protocol = {
 		}
 	}
 
-	#description = "origin_tooltip_mem_eden_protocol_effects"
+	description = "origin_tooltip_mem_eden_protocol_effects"
 
 	potential = {
 		species_archetype = { value = MACHINE }
@@ -200,6 +200,7 @@ origin_mem_eden_protocol = {
 		habitat_districts_building_slots_add = 0.1
 		habitat_max_districts_add = 2
 		habitat_district_jobs_add = 1
+		empire_size_colonies_mult = 0.5
 	}
 
 	flags = { custom_start_screen }

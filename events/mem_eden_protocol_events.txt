@@ -424,7 +424,7 @@ country_event = {
 ## situation events 
 ### TODO: event pictures 101-105
 situation_event = {
-	# dummy event for fast sitatuion
+	# dummy event for fast situation
 	id = mem_eden_protocol.100
 	title = "mem_eden_protocol.101.name"
 	picture = GFX_evt_habitat
