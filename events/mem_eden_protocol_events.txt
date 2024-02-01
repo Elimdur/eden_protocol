@@ -434,27 +434,22 @@ situation_event = {
 		always = yes
 	}
 	option = {
-		# habitat building slots
 		name = mem_eden_protocol.101.a
 		add_situation_progress = 100
 	}
 	option = {
-		# habitat building slots
 		name = mem_eden_protocol.101.a
 		add_situation_progress = 200
 	}
 	option = {
-		# habitat building slots
 		name = mem_eden_protocol.101.a
 		add_situation_progress = 300
 	}
 	option = {
-		# habitat building slots
 		name = mem_eden_protocol.101.a
 		add_situation_progress = 400
 	}
 	option = {
-		# habitat building slots
 		name = mem_eden_protocol.101.a
 		add_situation_progress = 500
 	}
@@ -684,10 +679,8 @@ situation_event = {
 							}
 							remove_building = building_mem_eden_protocol_terraformer_1
 						}
-						
 					}
 					every_pre_ftl_within_border = {
-
 						establish_communications = root.owner
 						owner = {
 							set_country_flag = pre_ftl_being_invaded
@@ -702,7 +695,8 @@ situation_event = {
 							}
 						}
 						set_hostile = root.owner
-						country_event = { #invade little later, immediate wont trigger ground combat
+						country_event = {
+							#invade little later, immediate wont trigger ground combat
 							id = mem_eden_protocol.106
 							days = 30
 						}
@@ -727,11 +721,11 @@ situation_event = {
 	}
 }
 
-country_event = { # invade them
+country_event = {
+	# invade them
 	id = mem_eden_protocol.106
 	hide_window = yes
 	is_triggered_only = yes
-
 	immediate = {
 		capital_scope = {
 			while = {
@@ -742,6 +736,69 @@ country_event = { # invade them
 					species = this.solar_system.owner.owner_main_species
 					type = "machine_assault_2"
 				}
+			}
+		}
+	}
+}
+
+# create pre-ftl via bombing | Fired by on_planet_bombarded
+# This = Planet
+# From = Bombarder
+planet_event = {
+	id = mem_eden_protocol.107
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_orbital_bombardment_stance = mem_eden_protocol_devolve
+		planet_devastation = 100
+		NOT = {
+			owner = {
+				is_country_type = primitive
+			}
+		}
+	}
+	immediate = {
+		# this is so scuffed but works xd, edit: TODO check if you can change the main species to something on the planet
+		create_pre_ftl_empire = yes
+		last_created_country = {
+			establish_communications = root.owner
+			establish_communications = from
+			set_pre_ftl_age = industrial_age			
+			if = {
+				limit = {
+					NOT = {
+						any_situation = {
+							is_situation_type = pre_ftl_tech_progress_situation
+						}
+					}
+				}
+				start_situation = {
+					type = pre_ftl_tech_progress_situation
+				}
+			}
+			random_situation = {
+				limit = {
+					is_situation_type = pre_ftl_tech_progress_situation
+				}
+				set_situation_flag = tech_frozen
+			}
+			root = {
+				set_owner = prev
+											
+				add_building = building_mem_eden_protocol_scrap_miner_base
+			}
+		}
+		from = {
+			create_message = {
+				type = MESSAGE_MEM_MADE_PRIMITIVE
+				localization = MESSAGE_MEM_MADE_PRIMITIVE
+				days = 30
+				target = root
+				#variable = {
+				#	type = name
+				#	localization = PLANET
+				#	scope = this
+				#}
 			}
 		}
 	}

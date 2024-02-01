@@ -552,3 +552,60 @@ building_mem_eden_protocol_da_organicbooster_2 = {
 	}
 	
 }
+
+building_mem_eden_protocol_scrap_miner_base = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+	category = unity
+	can_be_disabled = no
+	#upgrades = {
+	#	
+	#}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	potential = {
+		always = no
+		#exists = owner
+		#owner = {
+		#	is_country_type = primitive
+			
+		#}
+	
+	}
+	destroy_trigger = {
+		OR = {
+			NOT = {
+				exists = owner
+			}
+			owner = {
+				not={is_country_type = primitive}
+			}
+			
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_gestalt = yes
+		}
+	
+		job_scrap_miner_drone_per_pop = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_gestalt = no
+		}
+	
+		job_scrap_miner_per_pop = 1
+	}
+	ai_weight = {
+		weight = 0
+	}
+	
+}

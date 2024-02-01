@@ -17,3 +17,12 @@ on_colony_10_year_pulse = {
 		#mem_eden_protocol.121 # get primitive species, TODO: right species
 	}
 }
+
+# Planet has taken damage from orbital bombardment - Damage is applied daily
+# This = Planet
+# From = Bombarder
+on_planet_bombarded = {
+	events = {
+		mem_eden_protocol.107 # devolve bombing
+	}
+}

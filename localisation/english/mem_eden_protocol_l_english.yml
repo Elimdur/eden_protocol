@@ -105,9 +105,9 @@
  mem_eden_protocol.114.desc:0 "REPLACE_ME"
  mem_eden_protocol.114.a:0 "REPLACE_ME"
 
- building_mem_eden_protocol_da_organicbooster_1:0 "Cybernetic Garden"
+ building_mem_eden_protocol_da_organicbooster_1:0 "Cyborg Garden"
  building_mem_eden_protocol_da_organicbooster_1_desc:0 "REPLACE_ME"
- building_mem_eden_protocol_da_organicbooster_2:0 "Cybernetic Eden"
+ building_mem_eden_protocol_da_organicbooster_2:0 "Cyborg Eden"
  building_mem_eden_protocol_da_organicbooster_2_desc:0 "REPLACE_ME"
  
  job_mem_organic_booster:0 "N.A.H.A.S Drone"
@@ -115,3 +115,11 @@
  job_mem_organic_booster_desc:0 "REPLACE_ME"
  mod_job_mem_organic_booster_add:0 "$job_mem_organic_booster$ Jobs"
  mem_eden_protocol_empty:0 ""
+
+ bombardment_mem_eden_protocol_devolve:0 "Devolve"
+ bombardment_mem_eden_protocol_devolve_desc:0 "REPLACE_ME"
+
+ building_mem_eden_protocol_scrap_miner_base:0 "REPLACE_ME"
+ building_mem_eden_protocol_scrap_miner_base_desc:0 "REPLACE_ME"
+ 
+ MESSAGE_MEM_MADE_PRIMITIVE:0 "REPLACE_ME"
