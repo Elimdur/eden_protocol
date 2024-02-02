@@ -47,7 +47,8 @@
 
  job_mem_environmental_adjuster_drone:0 "Environmental Adjuster Drone"
  job_mem_environmental_adjuster_drone_plural:0 "Environmental Adjuster Drones"
- job_mem_environmental_adjuster_drone_desc:0 "£job_mem_environmental_adjuster_drone£ $job_mem_environmental_adjuster_drone_plural$ turn £energy£ §Y$energy$§! and £society£ §YResearch Points§! into £unity£ §Y$unity$§!"
+ job_mem_environmental_adjuster_drone_desc:0 "Tasked with creating and maintaining habitable environments for various kinds of biological life, these drones fulfill one of the primary functions of their machine conscience."
+ job_mem_environmental_adjuster_drone_effect_desc:0 "£job_mem_environmental_adjuster_drone£ $job_mem_environmental_adjuster_drone_plural$ turn £energy£ §Y$energy$§! and £society£ §YResearch Points§! into £unity£ §Y$unity$§!"
  mod_job_mem_environmental_adjuster_drone_add:0 "$job_mem_environmental_adjuster_drone$ Jobs"
 
  # 

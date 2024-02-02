@@ -1,7 +1,8 @@
 mem_caretaker_drone = {
+	icon = robot_caretaker
 	category = complex_drone
 	condition_string = DRONE_JOB_TRIGGER
-	building_icon = building_machine_capital
+	building_icon = building_mem_eden_protocol_seeder_1
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
@@ -84,9 +85,10 @@ mem_caretaker_drone = {
 }
 
 mem_seeder_drone = {
+	icon = xeno_zoo_animal
 	category = complex_drone
 	condition_string = DRONE_JOB_TRIGGER
-	building_icon = building_machine_capital
+	building_icon = building_mem_eden_protocol_seeder_1
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
@@ -138,9 +140,10 @@ mem_seeder_drone = {
 }
 
 mem_environmental_adjuster_drone = {
+	icon = ranger
 	category = complex_drone
 	condition_string = DRONE_JOB_TRIGGER
-	building_icon = building_machine_capital
+	building_icon = building_mem_eden_protocol_terraformer_1
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
