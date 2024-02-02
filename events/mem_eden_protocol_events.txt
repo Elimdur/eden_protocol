@@ -792,12 +792,24 @@ planet_event = {
 		}
 	}
 	immediate = {
-		# this is so scuffed but works xd, edit: TODO check if you can change the main species to something on the planet
-		create_pre_ftl_empire = yes
+		# this is so scuffed but works xd, edit: this gets even worse the longer i think about it
+		
+		if = {
+			limit = {
+				root.owner = {
+					is_hive_empire = yes
+				}
+			}
+			create_pre_ftl_hive_empire = yes
+		}
+		else = {
+			create_pre_ftl_empire = yes
+		}
+		
 		last_created_country = {
 			establish_communications = root.owner
 			establish_communications = from
-			set_pre_ftl_age = industrial_age			
+			set_pre_ftl_age = industrial_age
 			if = {
 				limit = {
 					NOT = {
@@ -818,8 +830,17 @@ planet_event = {
 			}
 			root = {
 				set_owner = prev
-											
 				add_building = building_mem_eden_protocol_scrap_miner_base
+			}
+			random_owned_pop = {
+				limit = {
+					can_think = yes
+				}
+				owner = {
+					change_dominant_species = {
+						species = PREV
+					}
+				}
 			}
 		}
 		from = {

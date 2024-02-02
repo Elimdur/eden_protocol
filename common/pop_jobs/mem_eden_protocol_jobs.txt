@@ -205,6 +205,9 @@ mem_organic_booster = {
 	possible_precalc = can_fill_drone_job
 	possible = {
 		can_think = yes
+		NOT = {
+			has_trait = trait_cybernetic
+		}
 	}
 	resources = {
 		category = planet_administrators
@@ -238,8 +241,18 @@ mem_organic_booster = {
 	planet_modifier = {
 		planet_cyborg_jobs_produces_mult = 0.05
 	}
+	triggered_country_modifier = {
+		potential = {
+			owner = {
+				has_country_flag = mem_eden_protocol_empire_size_per_job
+			}
+		}
+		empire_size_add = -4
+	}
 	weight = {
 		weight = @synapse_drone_job_weight
 		mult = value:job_weights_modifier|JOB|coordinator|RESOURCE|unity|
 	}
 }
+
+
