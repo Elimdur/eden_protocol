@@ -1,5 +1,20 @@
 namespace = mem_eden_protocol
 # fired at gamestart to setup the habitat
+
+country_event = {
+	id = mem_eden_protocol.1000
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_origin = origin_mem_eden_protocol
+	}
+	immediate = {
+		leader = {
+			add_trait = leader_trait_legendary_mem_eden_protocol
+		}
+	}
+}
+
 country_event = {
 	id = mem_eden_protocol.1
 	hide_window = yes
@@ -8,6 +23,9 @@ country_event = {
 		has_origin = origin_mem_eden_protocol
 	}
 	immediate = {
+		leader = {
+			add_trait = leader_trait_legendary_mem_eden_protocol
+		}
 		save_global_event_target_as = mem_eden_protocol_country
 		set_country_flag = encountered_first_primitive
 		set_policy = {
@@ -39,7 +57,7 @@ country_event = {
 			add_building = building_mem_eden_protocol_seeder_1
 			set_variable = {
 				which = mem_eden_protocol_caretaker_variable
-				value = value:mem_eden_protocol_caretaker_value
+				value = 1
 			}
 			while = {
 				count = 2
@@ -397,8 +415,24 @@ country_event = {
 			save_event_target_as = mem_eden_protocol_habitat
 			set_variable = {
 				which = mem_eden_protocol_caretaker_variable
-				value = value:mem_eden_protocol_caretaker_value
+				value = 0
 			}
+			solar_system = {
+				every_system_colony = {
+					limit = {
+						exists = owner
+						owner = {
+							is_country_type = primitive
+						}
+					}
+					event_target:mem_eden_protocol_habitat = {
+						change_variable = {
+							which = mem_eden_protocol_caretaker_variable
+							value = 1
+						}
+					}					
+				}
+			}			
 			owner = {
 				change_variable = {
 					which = mem_eden_protocol_cared_primitives_number_country

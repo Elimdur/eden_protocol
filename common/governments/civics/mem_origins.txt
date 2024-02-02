@@ -205,9 +205,9 @@ origin_mem_eden_protocol = {
 
 	flags = { custom_start_screen }
 
-	traits = {
-		trait = mem_machine_trait_void_dweller_1
-	}
+	#traits = {
+	#	trait = mem_machine_trait_void_dweller_1
+	#}
 	
 	random_weight = { base = 0 factor = 0 }
 }

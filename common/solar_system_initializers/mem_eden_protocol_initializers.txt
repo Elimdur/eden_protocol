@@ -192,6 +192,18 @@ mem_eden_protocol_sol_system_void_dweller_system = {
 			orbit_angle = 110
 			has_ring = no
 		}
+		# moon = {
+		# 	name = "NAME_Io"
+		# 	class = "pc_arid"
+		# 	size = 6
+		# 	orbit_distance = 10
+		# 	orbit_angle = 110
+		# 	has_ring = no
+			
+		# 	init_effect = {
+		# 		generate_very_early_pre_ftls_on_planet = yes
+		# 	}
+		# }
 		moon = {
 			name = "NAME_Europa"
 			class = "pc_frozen"
