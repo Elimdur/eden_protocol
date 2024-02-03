@@ -1,92 +1,3 @@
-# mem_machine_trait_void_dweller_1 = {
-# 	icon = "gfx/interface/icons/traits/trait_void_dweller_positive.dds"
-# 	initial = no
-# 	species_potential_add = {
-# 		exists = from
-# 		from = {
-# 			has_origin = origin_mem_eden_protocol
-# 		}
-# 	}
-# 	species_possible_add = {
-# 		has_trait = trait_machine_unit
-# 	}
-# 	species_possible_remove = {
-# 	}
-# 	randomized = no
-# 	allowed_archetypes = { MACHINE }
-# 	sorting_priority = 30
-
-# 	custom_tooltip_with_modifiers = mem_machine_trait_void_dweller_1_tooltip
-
-# 	modifier = {
-# 		habitat_jobs_produces_mult = 0.10
-# 		non_artificial_planet_jobs_produces_mult = -0.30
-# 	}
-
-# 	triggered_pop_modifier = {
-# 		potential = {
-# 			exists = owner
-# 			owner = {
-# 				has_edict = mem_protocol_synchronicity
-# 			}
-# 		}
-# 		planet_jobs_produces_mult = 0.02
-# 		mult = event_target:mem_eden_protocol_country.mem_eden_protocol_cared_primitives_number_country
-# 	}
-
-# 	ai_weight = {
-# 		weight = 0
-# 	}
-# 	assembly_score = {
-# 		modifier = {
-# 			add = 1.5
-# 			from = { uses_district_set = habitat }
-# 		}
-# 		modifier = {
-# 			subtract = 1.5
-# 			from = {
-# 				NOT = { uses_district_set = habitat }
-# 			}
-# 		}
-# 	}
-# }
-
-# leader_trait_legendary_mem_eden_protocol = {
-# 	cost = 0
-# 	inline_script = {
-# 		script = trait/icon
-# 		CLASS = leader
-# 		ICON = "GFX_leader_trait_home_in_the_sky"
-# 		RARITY = paragon
-# 		COUNCIL = no
-# 		TIER = none
-# 	}
-# 	triggered_modifier = {
-# 		potential = {
-# 			exists = owner
-# 			owner = {
-# 				has_edict = mem_protocol_synchronicity
-# 			}
-# 		}
-# 		planet_jobs_alloys_produces_mult = 0.02
-# 		planet_jobs_physics_research_produces_mult = 0.02
-# 		planet_jobs_society_research_produces_mult = 0.02
-# 		planet_jobs_engineering_research_produces_mult = 0.02
-# 		planet_jobs_simple_drone_produces_mult = 0.02
-# 		mult = event_target:mem_eden_protocol_country.mem_eden_protocol_cared_primitives_number_country
-# 		#show_if_not_potential = yes
-# 	}
-
-# 	modifier = {
-# 		habitat_jobs_produces_mult = 0.10
-# 		non_artificial_planet_jobs_produces_mult = -0.30
-# 	}
-
-# 	leader_class = { official commander scientist }
-# 	initial = no
-# 	randomized = no
-# }
-
 leader_trait_legendary_mem_eden_protocol = {
 	cost = 0
 	leader_trait_type = destiny
@@ -100,6 +11,7 @@ leader_trait_legendary_mem_eden_protocol = {
 		COUNCIL = yes
 		TIER = none
 	}
+	custom_tooltip_with_modifiers = leader_trait_legendary_mem_eden_protocol_tooltip
 	triggered_councilor_modifier = {
 		potential = {
 			exists = owner

@@ -327,6 +327,7 @@ country_event = {
 					solar_system = {
 						any_system_planet = {
 							has_modifier = toxic_terraforming_candidate
+							has_modifier = frozen_terraforming_candidate
 						}
 					}
 				}
@@ -610,9 +611,7 @@ situation_event = {
 		owner = {
 			custom_tooltip = mem_eden_protocol.104.a.tt
 			hidden_effect = {
-				owner = {
-					set_country_flag = mem_eden_protocol_empire_size_per_job
-				}
+				set_country_flag = mem_eden_protocol_empire_size_per_job
 			}
 		}
 	}
@@ -646,10 +645,9 @@ situation_event = {
 			}
 			custom_tooltip = mem_eden_protocol.105.a.tt			# unlock gaia forming and final building tier, pre ftl boost unity, get full machine world bonus from building
 			hidden_effect = {
-				owner = {
-					set_country_flag = mem_eden_protocol_stayed_caretaker
-					set_country_flag = mem_eden_protocol_seeder_3_allowed
-				}
+				set_country_flag = mem_eden_protocol_stayed_caretaker
+				set_country_flag = mem_eden_protocol_seeder_3_allowed
+				set_country_flag = mem_eden_protocol_gaiaforming_allowed
 			}
 		}
 	}
@@ -662,6 +660,9 @@ situation_event = {
 			}
 			force_add_civic = civic_machine_servitor
 			custom_tooltip = mem_eden_protocol.105.b.tt			# periodic pops, caretaker produce consumer goods
+			hidden_effect = {
+				set_country_flag = mem_eden_protocol_became_servitor
+			}
 		}
 	}
 	option = {
@@ -679,76 +680,73 @@ situation_event = {
 			}
 			set_policy_cooldown = interference
 			hidden_effect = {
-				owner = {
-					every_owned_planet = {
+				set_country_flag = mem_eden_protocol_became_assimilator
+				every_owned_planet = {
+					limit = {
+						OR = {
+							has_building = building_mem_eden_protocol_seeder_1
+							has_building = building_mem_eden_protocol_seeder_2
+							has_building = building_mem_eden_protocol_seeder_3
+							has_building = building_mem_eden_protocol_terraformer_1
+						}
+					}
+					if = {
 						limit = {
-							OR = {
-								has_building = building_mem_eden_protocol_seeder_1
-								has_building = building_mem_eden_protocol_seeder_2
-								has_building = building_mem_eden_protocol_seeder_3
-								has_building = building_mem_eden_protocol_terraformer_1
-							}
+							has_building = building_mem_eden_protocol_seeder_1
 						}
-						if = {
-							limit = {
-								has_building = building_mem_eden_protocol_seeder_1
-							}
-							remove_building = building_mem_eden_protocol_seeder_1
-							add_building = building_mem_eden_protocol_da_organicbooster_1
-						}
-						else_if = {
-							limit = {
-								has_building = building_mem_eden_protocol_seeder_2
-							}
-							remove_building = building_mem_eden_protocol_seeder_2
-							add_building = building_mem_eden_protocol_da_organicbooster_2
-						}
-						else_if = {
-							limit = {
-								has_building = building_mem_eden_protocol_seeder_3
-							}
-							remove_building = building_mem_eden_protocol_seeder_3
-							add_building = building_mem_eden_protocol_da_organicbooster_2
-						}
-						if = {
-							limit = {
-								has_building = building_mem_eden_protocol_terraformer_1
-							}
-							remove_building = building_mem_eden_protocol_terraformer_1
-						}
+						remove_building = building_mem_eden_protocol_seeder_1
+						add_building = building_mem_eden_protocol_da_organicbooster_1
 					}
-					every_pre_ftl_within_border = {
-						establish_communications = root.owner
-						owner = {
-							set_country_flag = pre_ftl_being_invaded
-							save_event_target_as = contact_empire
-							set_country_flag = first_contact_completed@root.owner
-							set_awareness = 100
+					else_if = {
+						limit = {
+							has_building = building_mem_eden_protocol_seeder_2
 						}
-						root.owner = {
-							set_country_flag = first_contact_completed@event_target:contact_empire
-							country_event = {
-								id = action.2
-							}
+						remove_building = building_mem_eden_protocol_seeder_2
+						add_building = building_mem_eden_protocol_da_organicbooster_2
+					}
+					else_if = {
+						limit = {
+							has_building = building_mem_eden_protocol_seeder_3
 						}
-						set_hostile = root.owner
+						remove_building = building_mem_eden_protocol_seeder_3
+						add_building = building_mem_eden_protocol_da_organicbooster_2
+					}
+					if = {
+						limit = {
+							has_building = building_mem_eden_protocol_terraformer_1
+						}
+						remove_building = building_mem_eden_protocol_terraformer_1
+					}
+				}
+				every_pre_ftl_within_border = {
+					establish_communications = root.owner
+					set_country_flag = pre_ftl_being_invaded
+					save_event_target_as = contact_empire
+					set_country_flag = first_contact_completed@root.owner
+					set_awareness = 100
+					root.owner = {
+						set_country_flag = first_contact_completed@event_target:contact_empire
 						country_event = {
-							#invade little later, immediate wont trigger ground combat
-							id = mem_eden_protocol.106
-							days = 30
+							id = action.2
 						}
-						#capital_scope = {
-						#	while = {
-						#		count = 3
-						#		create_army = {
-						#			name = random
-						#			owner = root.owner
-						#			species = root.owner_main_species
-						#			type = "machine_assault_2"
-						#		}
-						#	}
-						#}
 					}
+					set_hostile = root.owner
+					country_event = {
+						#invade little later, immediate wont trigger ground combat
+						id = mem_eden_protocol.106
+						days = 30
+					}
+					#capital_scope = {
+					#	while = {
+					#		count = 3
+					#		create_army = {
+					#			name = random
+					#			owner = root.owner
+					#			species = root.owner_main_species
+					#			type = "machine_assault_2"
+					#		}
+					#	}
+					#}
 				}
 			}
 		}
