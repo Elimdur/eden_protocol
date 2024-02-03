@@ -456,7 +456,7 @@ country_event = {
 }
 
 ## situation events 
-### TODO: event pictures 101-105
+### TODO: sounds 101-114, new finishing event for digsite (leader screen and holgram), make dummy event chain and assign subtitles for events
 situation_event = {
 	# dummy event for fast situation
 	id = mem_eden_protocol.100
@@ -492,12 +492,13 @@ situation_event = {
 situation_event = {
 	id = mem_eden_protocol.101
 	title = "mem_eden_protocol.101.name"
-	picture = GFX_evt_habitat
+	picture = GFX_evt_sapient_AI
 	is_triggered_only = yes
 	desc = "mem_eden_protocol.101.desc"
 	trigger = {
 		always = yes
 	}
+	#event_chain = mem_eden_protocol
 	option = {
 		# habitat building slots
 		name = mem_eden_protocol.101.a
@@ -505,7 +506,8 @@ situation_event = {
 			add_modifier = {
 				modifier = mem_eden_protocol_habitat_building_slots
 			}
-		}
+		}	
+			
 	}
 	option = {
 		# habitat housing
@@ -529,23 +531,23 @@ situation_event = {
 }
 
 situation_event = {
-	id = mem_eden_protocol.102
-	title = "mem_eden_protocol.102.name"
-	picture = GFX_evt_habitat
+	id = mem_eden_protocol.103
+	title = "mem_eden_protocol.103.name"
+	picture = GFX_evt_communication_event
 	is_triggered_only = yes
-	desc = "mem_eden_protocol.102.desc"
+	desc = "mem_eden_protocol.103.desc"
 	trigger = {
 		always = yes
 	}
 	option = {
 		# uncover arc site
-		name = mem_eden_protocol.102.a
+		name = mem_eden_protocol.103.a
 		owner = {
 			home_planet = {
 				solar_system = {
 					random_system_planet = {
 						limit = {
-							is_planet_class = pc_toxic
+							has_planet_flag = mem_eden_protocol_old_homeworld
 						}
 						create_archaeological_site = mem_eden_protocol_devolve_relic_digsite
 					}
@@ -556,17 +558,17 @@ situation_event = {
 }
 
 situation_event = {
-	id = mem_eden_protocol.103
-	title = "mem_eden_protocol.103.name"
-	picture = GFX_evt_habitat
+	id = mem_eden_protocol.102
+	title = "mem_eden_protocol.102.name"
+	picture = GFX_evt_robot_assembly_plant
 	is_triggered_only = yes
-	desc = "mem_eden_protocol.103.desc"
+	desc = "mem_eden_protocol.102.desc"
 	trigger = {
 		always = yes
 	}
 	option = {
 		# habitat district slots
-		name = mem_eden_protocol.103.a
+		name = mem_eden_protocol.102.a
 		owner = {
 			add_modifier = {
 				modifier = mem_eden_protocol_habitat_districts
@@ -575,7 +577,7 @@ situation_event = {
 	}
 	option = {
 		# habitat jobs per district
-		name = mem_eden_protocol.103.b
+		name = mem_eden_protocol.102.b
 		owner = {
 			add_modifier = {
 				modifier = mem_eden_protocol_habitat_jobs
@@ -583,7 +585,7 @@ situation_event = {
 		}
 	}
 	option = {
-		name = mem_eden_protocol.103.c
+		name = mem_eden_protocol.102.c
 		owner = {
 			add_monthly_resource_mult = {
 				resource = unity
@@ -628,7 +630,7 @@ situation_event = {
 situation_event = {
 	id = mem_eden_protocol.105
 	title = "mem_eden_protocol.105.name"
-	picture = GFX_evt_habitat
+	picture = GFX_evt_synth_organic_relations
 	is_triggered_only = yes
 	desc = "mem_eden_protocol.105.desc"
 	trigger = {
@@ -637,6 +639,7 @@ situation_event = {
 	option = {
 		# stay caretaker
 		name = mem_eden_protocol.105.a
+		
 		owner = {
 			add_modifier = {
 				modifier = mem_eden_protocol_civic_point
@@ -864,7 +867,7 @@ fleet_event = {
 	id = mem_eden_protocol.111
 	title = "mem_eden_protocol.111.name"
 	desc = "mem_eden_protocol.111.desc"
-	picture = GFX_evt_baol_datacrystals
+	picture = GFX_evt_toxic
 	show_sound = event_dig_site
 	archaeology = yes
 	is_triggered_only = yes
@@ -895,7 +898,7 @@ fleet_event = {
 	id = mem_eden_protocol.112
 	title = "mem_eden_protocol.112.name"
 	desc = "mem_eden_protocol.112.desc"
-	picture = GFX_evt_baol_datacrystals
+	picture = GFX_evt_underground_civilization
 	show_sound = event_dig_site
 	archaeology = yes
 	is_triggered_only = yes
@@ -926,7 +929,7 @@ fleet_event = {
 	id = mem_eden_protocol.113
 	title = "mem_eden_protocol.113.name"
 	desc = "mem_eden_protocol.113.desc"
-	picture = GFX_evt_baol_datacrystals
+	picture = GFX_evt_underground_city
 	show_sound = event_dig_site
 	archaeology = yes
 	is_triggered_only = yes
@@ -957,7 +960,7 @@ fleet_event = {
 	id = mem_eden_protocol.114
 	title = "mem_eden_protocol.114.name"
 	desc = "mem_eden_protocol.114.desc"
-	picture = GFX_evt_baol_datacrystals
+	picture = GFX_evt_glitchy_matrix
 	show_sound = event_dig_site
 	archaeology = yes
 	is_triggered_only = yes
