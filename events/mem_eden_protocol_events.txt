@@ -1,20 +1,6 @@
 namespace = mem_eden_protocol
+
 # fired at gamestart to setup the habitat
-
-country_event = {
-	id = mem_eden_protocol.1000
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		has_origin = origin_mem_eden_protocol
-	}
-	immediate = {
-		leader = {
-			add_trait = leader_trait_legendary_mem_eden_protocol
-		}
-	}
-}
-
 country_event = {
 	id = mem_eden_protocol.1
 	hide_window = yes
@@ -24,7 +10,11 @@ country_event = {
 	}
 	immediate = {
 		leader = {
-			add_trait = leader_trait_legendary_mem_eden_protocol
+			add_trait_no_notify = leader_trait_legendary_mem_eden_protocol
+		}
+		give_technology = {
+			tech = tech_terrestrial_sculpting
+			message = no
 		}
 		save_global_event_target_as = mem_eden_protocol_country
 		set_country_flag = encountered_first_primitive
