@@ -16,8 +16,8 @@
  leader_trait_legendary_mem_eden_protocol_tooltip:0 "$mod_planet_jobs_alloys_produces_mult$, $mod_planet_jobs_physics_research_produces_mult$, $mod_planet_jobs_society_research_produces_mult$, $mod_planet_jobs_engineering_research_produces_mult$ and $mod_planet_jobs_simple_drone_produces_mult$: §G+2%§! for every cared for pre-ftl civilization (up to 25) if the §YProtocol Synchronicity§! edict is §Gactive§!"
 
  edict_mem_protocol_synchronicity:0 "Protocol Synchronicity"
- edict_mem_protocol_synchronicity_desc:0 "This edict activates the §Y$leader_trait_legendary_mem_eden_protocol$'s§! secondary effect:\n\n$mod_planet_jobs_alloys_produces_mult$, $mod_planet_jobs_physics_research_produces_mult$, $mod_planet_jobs_society_research_produces_mult$, $mod_planet_jobs_engineering_research_produces_mult$ and $mod_planet_jobs_simple_drone_produces_mult$: §G+2%§! for every cared for pre-ftl civilization (up to 25).""
- #\n\nCurrent value: §G[Root.mem_eden_protocol_cared_primitives_number_country] / 25§!" #cannot display variable value
+ edict_mem_protocol_synchronicity_desc:0 "This edict activates the §Y$leader_trait_legendary_mem_eden_protocol$'s§! secondary effect:\n\n$mod_planet_jobs_alloys_produces_mult$, $mod_planet_jobs_physics_research_produces_mult$, $mod_planet_jobs_society_research_produces_mult$, $mod_planet_jobs_engineering_research_produces_mult$ and $mod_planet_jobs_simple_drone_produces_mult$: §G+2%§! for every cared for pre-ftl civilization (up to 25)."
+ #\n\nCurrent value: §G[Root.owner.mem_eden_protocol_cared_primitives_number_country] / 25§!" #cannot display variable value
  
  building_mem_eden_protocol_seeder_1:0 "Seeding and Caretaking Hub"
  building_mem_eden_protocol_seeder_1_desc:0 "A facility with the purpose of seeding and maintaining organic life on habitable worlds within this solar system."

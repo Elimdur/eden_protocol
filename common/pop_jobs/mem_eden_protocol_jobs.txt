@@ -17,7 +17,7 @@ mem_caretaker_drone = {
 	resources = {
 		category = planet_administrators
 		produces = {
-			unity = 6
+			unity = 5
 		}
 		produces = {
 			trigger = {
@@ -103,7 +103,7 @@ mem_seeder_drone = {
 	resources = {
 		category = planet_administrators
 		produces = {
-			unity = 8
+			unity = 6
 			society_research = 2
 		}
 		upkeep = {
