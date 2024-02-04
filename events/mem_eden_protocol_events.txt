@@ -186,7 +186,7 @@ country_event = {
 										exists = owner
 									}
 								}
-								generate_very_early_pre_ftls_on_planet = yes
+								save_event_target_as = mem_eden_protocol_seeding_target
 							}
 						}
 						owner = {
@@ -194,7 +194,11 @@ country_event = {
 								flag = mem_eden_protocol_seeding_pause
 								years = 2
 							}
-							# give notification use icon:message_gardeners_seed_planted.dds
+							country_event = {
+								id = mem_eden_protocol.5
+								days = 1
+								random = 358
+							}
 						}
 					}
 				}
@@ -293,8 +297,7 @@ country_event = {
 										}
 									}
 								}
-								change_pc = rl_habitable_normal
-								reroll_planet = yes
+								save_event_target_as = mem_eden_protocol_terraforming_target
 							}
 						}
 						owner = {
@@ -302,11 +305,15 @@ country_event = {
 								flag = mem_eden_protocol_terraforming_pause
 								years = 3
 							}
-							add_monthly_resource_mult = {
-								resource = unity
-								value = 2
+							# add_monthly_resource_mult = {
+							# 	resource = unity
+							# 	value = 2
+							# }
+							country_event = {
+								id = mem_eden_protocol.3
+								days = 1
+								random = 358
 							}
-							# TODO: give notification
 						}
 					}
 				}
@@ -322,8 +329,10 @@ country_event = {
 					has_building = building_mem_eden_protocol_terraformer_2
 					solar_system = {
 						any_system_planet = {
-							has_modifier = toxic_terraforming_candidate
-							has_modifier = frozen_terraforming_candidate
+							OR = {
+								has_modifier = toxic_terraforming_candidate
+								has_modifier = frozen_terraforming_candidate
+							}							
 						}
 					}
 				}
@@ -334,9 +343,12 @@ country_event = {
 						solar_system = {
 							random_system_planet = {
 								limit = {
-									has_modifier = toxic_terraforming_candidate
+									OR = {
+										has_modifier = toxic_terraforming_candidate
+										has_modifier = frozen_terraforming_candidate
+									}
 								}
-								change_pc = rl_habitable_normal
+								save_event_target_as = mem_eden_protocol_terraforming_target
 							}
 						}
 						owner = {
@@ -344,11 +356,15 @@ country_event = {
 								flag = mem_eden_protocol_terraforming_pause
 								years = 3
 							}
-							add_monthly_resource_mult = {
-								resource = unity
-								value = 2
+							# add_monthly_resource_mult = {
+							# 	resource = unity
+							# 	value = 2
+							# }
+							country_event = {
+								id = mem_eden_protocol.3
+								days = 1
+								random = 358
 							}
-							# give notification
 						}
 					}
 				}
@@ -399,7 +415,7 @@ country_event = {
 										}
 									}
 								}
-								change_pc = pc_gaia
+								save_event_target_as = mem_eden_protocol_terraforming_target
 							}
 						}
 						owner = {
@@ -407,11 +423,15 @@ country_event = {
 								flag = mem_eden_protocol_terraforming_pause
 								years = 3
 							}
-							add_monthly_resource_mult = {
-								resource = unity
-								value = 6
+							# add_monthly_resource_mult = {
+							# 	resource = unity
+							# 	value = 6
+							# }
+							country_event = {
+								id = mem_eden_protocol.4
+								days = 1
+								random = 358
 							}
-							# give notification
 						}
 					}
 				}
@@ -457,6 +477,116 @@ country_event = {
 				value = 25
 			}
 		}
+	}
+}
+
+# Terraforming
+country_event = {
+	id = mem_eden_protocol.3
+	title = mem_eden_protocol.3.name
+	desc = mem_eden_protocol.3.desc
+	picture = {
+		trigger = {
+			event_target:mem_eden_protocol_terraforming_target = { 
+				is_wet = yes
+			}
+		}
+		picture = GFX_evt_alien_nature
+	}
+	picture = {
+		trigger = {
+			event_target:mem_eden_protocol_terraforming_target = {
+				is_dry = yes
+			}
+		}
+		picture = GFX_evt_landing_ship
+	}
+	picture = {
+		trigger = {
+			event_target:mem_eden_protocol_terraforming_target = {
+				is_cold = yes
+			}
+		}
+		picture = GFX_evt_arctic
+	}
+	show_sound = event_alien_nature
+	location = event_target:mem_eden_protocol_terraforming_target
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mem_eden_protocol_terraforming_target = {
+			change_pc = rl_habitable_normal
+			reroll_planet = yes
+			if = {
+				limit = {
+					has_modifier = terraforming_candidate
+				}
+				remove_modifier = terraforming_candidate
+			}
+			if = {
+				limit = {
+					has_modifier = toxic_terraforming_candidate
+				}
+				remove_modifier = toxic_terraforming_candidate
+			}
+			if = {
+				limit = {
+					has_modifier = frozen_terraforming_candidate
+				}
+				remove_modifier = frozen_terraforming_candidate
+			}
+		}			
+	}
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# Gaia Transformation
+country_event = {
+	id = mem_eden_protocol.4
+	title = mem_eden_protocol.4.name
+	desc = mem_eden_protocol.4.desc
+	picture = GFX_evt_animal_wildlife
+	show_sound = event_alien_nature
+	location = event_target:mem_eden_protocol_terraforming_target
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mem_eden_protocol_terraforming_target = {
+			change_pc = pc_gaia
+			reroll_planet = yes
+		}			
+	}
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+# Primitive Civ has been seeded
+# maybe just hide windo and give notification use icon:message_gardeners_seed_planted.dds
+country_event = {
+	id = mem_eden_protocol.5
+	title = mem_eden_protocol.5.name
+	desc = mem_eden_protocol.5.desc
+	picture = GFX_evt_alien_cavemen
+	show_sound = event_pre_ftl_civilization
+	location = event_target:mem_eden_protocol_seeding_target
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:mem_eden_protocol_seeding_target = {
+			generate_very_early_pre_ftls_on_planet = yes
+		}			
+	}
+
+	option = {
+		name = EXCELLENT
 	}
 }
 

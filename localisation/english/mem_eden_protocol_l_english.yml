@@ -47,6 +47,13 @@
  job_mem_environmental_adjuster_drone_effect_desc:0 "£job_mem_environmental_adjuster_drone£ $job_mem_environmental_adjuster_drone_plural$ turn £energy£ §Y$energy$§! and £society£ §YResearch Points§! into £unity£ §Y$unity$§!"
  mod_job_mem_environmental_adjuster_drone_add:0 "$job_mem_environmental_adjuster_drone$ Jobs"
 
+ mem_eden_protocol.3.name:0 "Terraforming Finished"
+ mem_eden_protocol.3.desc:0 "REPLACE_ME"
+ mem_eden_protocol.4.name:0 "Gaiaforming Complete"
+ mem_eden_protocol.4.desc:0 "REPLACE_ME"
+ mem_eden_protocol.5.name:0 "Primitives Seeded"
+ mem_eden_protocol.5.desc:0 "REPLACE_ME"
+
  MESSAGE_MEM_GOT_PRIMITIVE:0 "Primitives gained"
 
  r_mem_eden_protocol_devolve_relic:0 "Last Protocol"
