@@ -1,8 +1,9 @@
-#TODO: search for good icon
 
-message_type = {
+#servitor 10 yearly poop acquisition
+
+message_type = { 
 	key = "MESSAGE_MEM_GOT_PRIMITIVE"
-	icon = "GFX_trime_hourglass_tick"
+	icon = "GFX_message_preftl_awareness"
 	icon_frame = 1
 
 	name = "MESSAGE_MEM_GOT_PRIMITIVE"
@@ -12,9 +13,11 @@ message_type = {
 	category = diplomacy
 }
 
+#bombardment
+
 message_type = {
 	key = "MESSAGE_MEM_MADE_PRIMITIVE"
-	icon = "GFX_trime_hourglass_tick"
+	icon = "GFX_message_plantoid_bloomed"
 	icon_frame = 1
 
 	name = "MESSAGE_MEM_MADE_PRIMITIVE"

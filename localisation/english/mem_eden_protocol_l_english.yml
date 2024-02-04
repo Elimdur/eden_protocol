@@ -13,7 +13,7 @@
 
  leader_trait_legendary_mem_eden_protocol:0 "E.D.E.N. Protocol"
  leader_trait_legendary_mem_eden_protocol_desc:0 "This machine consciousness' programming dictates its operation to take place off-world. Being in breach with this command lowers its productivity significantly."
- leader_trait_legendary_mem_eden_protocol_tooltip:0 "$mod_planet_jobs_alloys_produces_mult$, $mod_planet_jobs_physics_research_produces_mult$, $mod_planet_jobs_society_research_produces_mult$, $mod_planet_jobs_engineering_research_produces_mult$ and $mod_planet_jobs_simple_drone_produces_mult$: §G+2%§! for every cared for pre-ftl civilization (up to 25) if the §YProtocol Synchronicity§! edict is §Gactive§!\n\nCurrently cared for Pre-FTLs: §G[Root.owner.mem_eden_protocol_cared_primitives_number_country]§!"
+ leader_trait_legendary_mem_eden_protocol_tooltip:0 "\n$mod_planet_jobs_alloys_produces_mult$, $mod_planet_jobs_physics_research_produces_mult$, $mod_planet_jobs_society_research_produces_mult$, $mod_planet_jobs_engineering_research_produces_mult$ and $mod_planet_jobs_simple_drone_produces_mult$: §G+2%§! for every cared for pre-ftl civilization (up to 25) if the §YProtocol Synchronicity§! edict is §Gactive§!\n\nCurrently cared for Pre-FTLs: §G[Root.owner.mem_eden_protocol_cared_primitives_number_country]§!"
 
  edict_mem_protocol_synchronicity:0 "Protocol Synchronicity"
  edict_mem_protocol_synchronicity_desc:0 "This edict activates the §Y$leader_trait_legendary_mem_eden_protocol$'s§! secondary effect:\n\n$mod_planet_jobs_alloys_produces_mult$, $mod_planet_jobs_physics_research_produces_mult$, $mod_planet_jobs_society_research_produces_mult$, $mod_planet_jobs_engineering_research_produces_mult$ and $mod_planet_jobs_simple_drone_produces_mult$: §G+2%§! for every cared for pre-ftl civilization (up to 25)."
@@ -58,6 +58,12 @@
  situation_mem_eden_protocol_protocolswill_type:0 "Protocol pathway"
  situation_mem_eden_protocol_protocolswill_monthly_change_tooltip:0 "Progress"
  situation_mem_eden_protocol_protocolswill_final_choice:0 "Our Destiny will be fulfilled"
+situation_mem_eden_protocol_protocolswill_desc:0 "REPLACE_ME"
+ situation_mem_eden_protocol_protocolswill_stage0:0 "Stage 1"
+ situation_mem_eden_protocol_protocolswill_stage1:0 "Stage 2"
+ situation_mem_eden_protocol_protocolswill_stage2:0 "Stage 3"
+ situation_mem_eden_protocol_protocolswill_stage3:0 "Stage 4"
+ situation_mem_eden_protocol_protocolswill_stage4:0 "Stage 5"
  string_mem_eden_protocol_protocolswill:0 "Cared for Pre-FTLs"
  approach_mem_eden_protocol_protocolswill_1:0 "01100001" #binary: a
  approach_mem_eden_protocol_protocolswill_2:0 "01100010" #binary: b
@@ -95,7 +101,7 @@
  mem_eden_protocol.105.b:0 "§YThey are save with us§!"
  mem_eden_protocol.105.b.tt:0 "Periodically §Yoptain pops§! from cared Pre-Ftls\n§Y$building_mem_eden_protocol_seeder_1$§! provides §G5§! §YBio-Trophy§! Jobs per tier\n§Y$job_mem_caretaker_drone$§!: produce §G+2§! £consumer_goods£ §Y$consumer_goods$§! and §R+2§! £minerals£ §Y$minerals$§! upkeep"
  mem_eden_protocol.105.c:0 "§RThey are save as one of us§!"
- mem_eden_protocol.105.c.tt:0 "Replace every §Y$building_mem_eden_protocol_seeder_1$§! with §Y$building_mem_eden_protocol_da_organicbooster_1$§!\nReplace §Y$job_mem_caretaker_drone_plural$§! with §Y$job_mem_organic_booster_plural$§! providing §G+5%§! §YCyborg Output§!\n§YEvery Pre-Ftl§! in owned territory becomes §Yhostile§!\n§YEvery Pre-Ftl§! in owned territory §Ygets invaded in 30 days§!"
+ mem_eden_protocol.105.c.tt:0 "Replace every §Y$building_mem_eden_protocol_seeder_1$§! with §Y$building_mem_eden_protocol_da_organicbooster_1$§!\nReplace §Y$job_mem_caretaker_drone_plural$§! with §Y$job_mem_organic_booster_plural$§! providing §G+5%§! §YCyborg Output§!\n§YEvery Pre-Ftl§! in owned territory becomes §Yhostile§!\n§YEvery Pre-Ftl§! in owned territory §Ygets invaded in 30 days§!\nLose access to the §Y$edict_mem_protocol_synchronicity$§! edict"
 
  #arcsite
  

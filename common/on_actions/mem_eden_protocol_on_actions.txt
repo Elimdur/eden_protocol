@@ -14,7 +14,7 @@ on_yearly_pulse_country = {
 
 on_colony_10_year_pulse = {
 	events = {
-		#mem_eden_protocol.121 # get primitive species, TODO: right species
+		mem_eden_protocol.121 # get primitive pops for RS 
 	}
 }
 

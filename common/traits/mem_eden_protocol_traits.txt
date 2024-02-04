@@ -10,7 +10,19 @@ leader_trait_legendary_mem_eden_protocol = {
 		COUNCIL = yes
 		TIER = none
 	}
-	custom_tooltip_with_modifiers = leader_trait_legendary_mem_eden_protocol_tooltip
+	#custom_tooltip_with_modifiers = leader_trait_legendary_mem_eden_protocol_tooltip
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				NOT = {
+					has_valid_civic = civic_machine_assimilator
+				}
+			}
+		}
+		text = leader_trait_legendary_mem_eden_protocol_tooltip
+	}
 	triggered_councilor_modifier = {
 		potential = {
 			exists = owner

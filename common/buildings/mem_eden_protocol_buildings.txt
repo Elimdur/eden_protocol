@@ -12,6 +12,7 @@ building_mem_eden_protocol_seeder_1 = {
 		owner = {
 			is_country_type = default
 			has_origin = origin_mem_eden_protocol
+			NOT = { has_valid_civic = civic_machine_assimilator } # no 
 		}
 		solar_system = {
 			any_system_planet = {
@@ -563,6 +564,7 @@ building_mem_eden_protocol_da_organicbooster_2 = {
 	base_buildtime = @b2_time
 	base_cap_amount = 1
 	category = unity
+	can_build = no
 	can_be_disabled = no
 	upgrades = {
 		
@@ -607,6 +609,7 @@ building_mem_eden_protocol_scrap_miner_base = {
 	base_cap_amount = 1
 	category = unity
 	can_be_disabled = no
+	can_build = no
 	#upgrades = {
 	#	
 	#}
@@ -619,15 +622,15 @@ building_mem_eden_protocol_scrap_miner_base = {
 			energy = 5
 		}
 	}
-	potential = {
-		always = no
+	#potential = {
+	#	always = no
 		#exists = owner
 		#owner = {
 		#	is_country_type = primitive
 			
 		#}
 	
-	}
+	#}
 	destroy_trigger = {
 		OR = {
 			NOT = {

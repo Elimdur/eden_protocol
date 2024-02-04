@@ -195,9 +195,10 @@ mem_environmental_adjuster_drone = {
 }
 
 mem_organic_booster = {
+	icon = xeno_zoo_keeper
 	category = complex_drone
 	condition_string = DRONE_JOB_TRIGGER
-	building_icon = building_machine_capital
+	building_icon = building_mem_eden_protocol_da_organicbooster_1
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
@@ -215,7 +216,8 @@ mem_organic_booster = {
 	resources = {
 		category = planet_administrators
 		produces = {
-			unity = 8
+			unity = 7
+			food = 1 # switch 1 unity to 1 food, dont know if thats appropiate
 		}
 		upkeep = {
 			energy = 4
