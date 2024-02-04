@@ -1014,7 +1014,7 @@ planet_event = {
 			}
 		}
 		create_pop = {
-			species = mem_primitive_target
+			species = event_target:mem_primitive_target
 		}
 		create_message = {
 			type = MESSAGE_MEM_GOT_PRIMITIVE
