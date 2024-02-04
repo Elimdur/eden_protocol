@@ -1,6 +1,5 @@
 leader_trait_legendary_mem_eden_protocol = {
 	cost = 0
-	leader_trait_type = destiny
 	initial = no
 	randomized = no
 	inline_script = {
@@ -32,6 +31,5 @@ leader_trait_legendary_mem_eden_protocol = {
 		habitat_jobs_produces_mult = 0.10
 		non_artificial_planet_jobs_produces_mult = -0.30
 	}
-	leader_class = { official }
-	background_icon = "GFX_leader_background_destiny_1"
+	leader_class = { commander scientist official }
 }
