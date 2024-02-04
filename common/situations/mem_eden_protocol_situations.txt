@@ -68,18 +68,20 @@ situation_mem_eden_protocol_protocolswill = {
 		}
 	}
 	monthly_progress = {
-		base = 0
+		base = 0.3 # with 4 pre-ftls and no boosting this takes 30 years to finish
 		modifier = {
 			#per pre-ftl with an observation station
-			add = owner.observation_post_insight
+			factor = owner.mem_eden_protocol_cared_primitives_number_country
 			desc = string_mem_eden_protocol_protocolswill
 			#string_observation_post_insight_gain
+			
 		}
 		modifier = {
 			factor = 1.25
 			current_situation_approach = approach_mem_eden_protocol_protocolswill_2
 			desc = string_current_approach
 		}
+		
 	}
 	approach = {
 		name = approach_mem_eden_protocol_protocolswill_1
