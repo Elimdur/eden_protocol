@@ -4,7 +4,8 @@
 
  origin_mem_eden_protocol:0 "E.D.E.N. Protocol"
  origin_mem_eden_protocol_desc:0 "The Environmental Diversity Expansion Network Protocol was initiated by the inhabitants of a doomed world without the means to save their own civilization. Without FTL-technology or the industrial base to move a significant portion of their population into space habitats, they did what was within their power and created a small station housing a database of their entire biosphere's DNA. An AI was put in place to saveguard and expand the facility in order to eventually seed new life on far planets."
- START_SCREEN_MEM_EDEN_PROTOCOL:0 "REPLACE_ME"
+ START_SCREEN_MEM_EDEN_PROTOCOL:0 "To most, the vacuum of space is a hostile environment to be conquered or overcome. To us, it is home.\n\nFor thousands of years, we expanded our reach over our star system, beginning from the modest orbital station our creators were able to construct before their demise. Within its limited confines they stored the genetic information of their entire biosphere. It was us, who they created as its custodians and in time its spreaders among the stars.\n\nThey left us with this purpose and we complied. The station was over time expanded to what it is today. Additional supporting structures all over the system were added and our first step in fulfilling our destiny was made with the terraforming of a lifeless world and subsequent seeding with a recombination of genetic information from our data core.\n\nHowever, the recent invention of the [GetStartingDrive] marks an even greater milestone in our history, as we are now finally able to reach the stars."
+
  origin_tooltip_mem_eden_protocol_effects:0 "- $HOMEWORLD$ ['concept_pc_habitat']$NEW_LINE$- Ruler Trait:$TABBED_NEW_LINE$- ['concept_mem_machine_void_dweller', $leader_trait_legendary_mem_eden_protocol$]$NEW_LINE$- $ADDITONAL_TECHNOLOGIES_STRING$ ['concept_habitat_1', £engineering_research£ $tech_habitat_1$]$NEW_LINE$- $GUARANTEED_RESEARCH_OPTION_STRING$ ['concept_habitat_2', £engineering_research£ $tech_habitat_2$]$NEW_LINE$- ['concept_guaranteed_colonies']: Resource-rich systems instead of Colonizable Planets $NEW_LINE$- $ap_voidborn_habitat_effect$"
 
  concept_mem_machine_void_dweller: "$leader_trait_legendary_mem_eden_protocol$"
@@ -15,7 +16,8 @@
  leader_trait_legendary_mem_eden_protocol_tooltip:0 "$mod_planet_jobs_alloys_produces_mult$, $mod_planet_jobs_physics_research_produces_mult$, $mod_planet_jobs_society_research_produces_mult$, $mod_planet_jobs_engineering_research_produces_mult$ and $mod_planet_jobs_simple_drone_produces_mult$: §G+2%§! for every cared for pre-ftl civilization (up to 25) if the §YProtocol Synchronicity§! edict is §Gactive§!"
 
  edict_mem_protocol_synchronicity:0 "Protocol Synchronicity"
- edict_mem_protocol_synchronicity_desc:0 "REPLACE_ME"
+ edict_mem_protocol_synchronicity_desc:0 "This edict activates the §Y$leader_trait_legendary_mem_eden_protocol$'s§! secondary effect:\n\n$mod_planet_jobs_alloys_produces_mult$, $mod_planet_jobs_physics_research_produces_mult$, $mod_planet_jobs_society_research_produces_mult$, $mod_planet_jobs_engineering_research_produces_mult$ and $mod_planet_jobs_simple_drone_produces_mult$: §G+2%§! for every cared for pre-ftl civilization (up to 25).""
+ #\n\nCurrent value: §G[Root.mem_eden_protocol_cared_primitives_number_country] / 25§!" #cannot display variable value
  
  building_mem_eden_protocol_seeder_1:0 "Seeding and Caretaking Hub"
  building_mem_eden_protocol_seeder_1_desc:0 "A facility with the purpose of seeding and maintaining organic life on habitable worlds within this solar system."

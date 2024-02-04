@@ -122,6 +122,9 @@ country_event = {
 			#		}
 			#	}
 		}
+		country_event = {
+			id = mem_eden_protocol.2
+		}
 	}
 }
 
