@@ -48,11 +48,11 @@
  mod_job_mem_environmental_adjuster_drone_add:0 "$job_mem_environmental_adjuster_drone$ Jobs"
 
  mem_eden_protocol.3.name:0 "Terraforming Finished"
- mem_eden_protocol.3.desc:0 "REPLACE_ME"
+ mem_eden_protocol.3.desc:0 "Our preparations of §Y[mem_eden_protocol_terraforming_target.GetName]§! to be seeded with more complex life have been concluded. This formerly lifeless world has now become habitable."
  mem_eden_protocol.4.name:0 "Gaiaforming Complete"
- mem_eden_protocol.4.desc:0 "REPLACE_ME"
+ mem_eden_protocol.4.desc:0 "The transformation of §Y[mem_eden_protocol_terraforming_target.GetName]§! has been successful. Never before has this world seen this level of ecological diversity."
  mem_eden_protocol.5.name:0 "Primitives Seeded"
- mem_eden_protocol.5.desc:0 "REPLACE_ME"
+ mem_eden_protocol.5.desc:0 "According to protocol, various groups of vat grown sapients had been released on §Y[mem_eden_protocol_seeding_target.GetName]§!. Recent observations show them being well acclimated with their environment at this point.\n\nAnother successful seeding cycle."
 
  MESSAGE_MEM_GOT_PRIMITIVE:0 "Primitives gained"
 
