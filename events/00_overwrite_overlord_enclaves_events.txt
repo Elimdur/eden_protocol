@@ -1,5 +1,6 @@
 namespace = enclave
 
+# can be deleted once the scripted trigger is used here
 country_event = { # Salvagers
 	id = enclave.7005
 	title = enclave.7005.title

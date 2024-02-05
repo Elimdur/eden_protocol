@@ -13,13 +13,11 @@ mem_protocol_synchronicity = {
 		category = edicts
 		cost = {
 			unity = @Edict1Cost
-			multiplier = value:edict_size_effect
-			multiplier = mem_eden_protocol_cared_primitives_number_country
+			multiplier = value:mem_eden_protocol_synchronicity_cost_multiplier
 		}
 		upkeep = {
 			unity = @Edict1Cost
-			multiplier = value:edict_size_effect
-			multiplier = mem_eden_protocol_cared_primitives_number_country
+			multiplier = value:mem_eden_protocol_synchronicity_cost_multiplier
 		}
 	}
 
