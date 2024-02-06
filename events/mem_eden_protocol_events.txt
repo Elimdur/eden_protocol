@@ -332,7 +332,7 @@ country_event = {
 							OR = {
 								has_modifier = toxic_terraforming_candidate
 								has_modifier = frozen_terraforming_candidate
-							}							
+							}
 						}
 					}
 				}
@@ -487,7 +487,7 @@ country_event = {
 	desc = mem_eden_protocol.3.desc
 	picture = {
 		trigger = {
-			event_target:mem_eden_protocol_terraforming_target = { 
+			event_target:mem_eden_protocol_terraforming_target = {
 				is_wet = yes
 			}
 		}
@@ -511,9 +511,7 @@ country_event = {
 	}
 	show_sound = event_alien_nature
 	location = event_target:mem_eden_protocol_terraforming_target
-
 	is_triggered_only = yes
-
 	immediate = {
 		event_target:mem_eden_protocol_terraforming_target = {
 			change_pc = rl_habitable_normal
@@ -536,9 +534,8 @@ country_event = {
 				}
 				remove_modifier = frozen_terraforming_candidate
 			}
-		}			
+		}
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -552,16 +549,13 @@ country_event = {
 	picture = GFX_evt_animal_wildlife
 	show_sound = event_alien_nature
 	location = event_target:mem_eden_protocol_terraforming_target
-
 	is_triggered_only = yes
-
 	immediate = {
 		event_target:mem_eden_protocol_terraforming_target = {
 			change_pc = pc_gaia
 			reroll_planet = yes
-		}			
+		}
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -576,15 +570,12 @@ country_event = {
 	picture = GFX_evt_alien_cavemen
 	show_sound = event_pre_ftl_civilization
 	location = event_target:mem_eden_protocol_seeding_target
-
 	is_triggered_only = yes
-
 	immediate = {
 		event_target:mem_eden_protocol_seeding_target = {
 			generate_very_early_pre_ftls_on_planet = yes
-		}			
+		}
 	}
-
 	option = {
 		name = EXCELLENT
 	}
@@ -1105,7 +1096,112 @@ fleet_event = {
 	option = {
 		name = mem_eden_protocol.114.a
 		owner = {
-			add_relic = r_mem_eden_protocol_devolve_relic
+			country_event = {
+				id = mem_eden_protocol.115
+			}
+		}
+	}
+}
+
+# TODO: cases for sol and non sol start
+country_event = {
+	id = mem_eden_protocol.115
+	title = "mem_eden_protocol.115.name"
+	desc = "mem_eden_protocol.115.desc"
+	picture = GFX_evt_exploding_ship
+	show_sound = event_airlock
+	is_triggered_only = yes
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_renowned"
+	picture_event_data = {
+		portrait = event_target:mem_eden_protocol_killhim
+	}
+	immediate = {
+		hidden_effect = {
+			create_country = {
+				name = "NAME_Unknown"
+				type = global_event
+				auto_delete = yes
+				flag = {
+					icon = {
+						category = "special"
+						file = "unknown.dds"
+					}
+					background = {
+						category = "backgrounds"
+						file = "00_solid.dds"
+					}
+					colors = {
+						"red"
+						"red"
+						"null"
+						"null"
+					}
+				}
+				effect = {
+					save_event_target_as = mem_eden_protocol_country
+				}
+			}
+			event_target:mem_eden_protocol_country = {
+				create_species = {
+					name = "NAME_Unknown"
+					class = PARAGON
+					portrait = mem_eden_protocol_leader
+					namelist = "PRT1"
+					traits = {
+						trait = trait_decadent
+					}
+					effect = {
+						save_event_target_as = mem_eden_protocol_species
+					}
+				}
+				create_leader = {
+					species = event_target:mem_eden_protocol_species
+					event_leader = yes
+					class = scientist
+					name = "NAME_mem_eden_protocol_species"
+					skill = 1
+					randomize_traits = no
+					skip_background_generation = yes
+					background_ethic = ethic_authoritarian
+					#custom_catch_phrase = 
+					#custom_description = 
+					#can_manually_change_location = 
+					traits = {
+					}
+					gender = male
+					set_age = 10
+					immortal = yes
+					effect = {
+						save_event_target_as = mem_eden_protocol_killhim
+					}
+					#change_leader_portrait = mem_eden_protocol_sol_leader
+				}
+			}
+			if = {
+				limit = {
+					exists = event_target:sol_system_earth
+					event_target:sol_system_earth = {
+						has_planet_flag = mem_eden_protocol_old_homeworld
+					}
+				}
+				last_created_leader = {
+					change_leader_portrait = mem_eden_protocol_sol_leader
+				}
+			}
+		}
+	}
+	option = {
+		name = mem_eden_protocol.115.a
+		add_relic = r_mem_eden_protocol_devolve_relic
+	}
+	after = {
+		hidden_effect = {
+			event_target:mem_eden_protocol_killhim = {
+				kill_leader = {
+					show_notification = no
+				}
+			}
 		}
 	}
 }

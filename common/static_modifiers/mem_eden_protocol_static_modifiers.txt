@@ -19,12 +19,13 @@ mem_eden_protocol_habitat_districts = {
 
 mem_eden_protocol_habitat_jobs = {
 	icon = "gfx/interface/icons/modifiers/mod_starbase_building_capacity_add.dds"
-	habitat_district_jobs_add = 1
+	habitat_jobs_produces_mult = 0.1
 	megastructures_habitat_cost_mult = -0.1
 }
 
 mem_eden_protocol_research = {
-	all_technology_research_speed = 0.1
+	#all_technology_research_speed = 0.1
+	tech_cost_empire_size_mult = -0.2
 }
 
 mem_eden_protocol_civic_point = {
