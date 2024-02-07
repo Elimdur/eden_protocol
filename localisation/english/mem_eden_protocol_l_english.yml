@@ -125,6 +125,9 @@
  mem_eden_protocol.114.name:0 "Remains to be Seen"
  mem_eden_protocol.114.desc:0 "Our team enter the library cautiously not letting in any toxic air. Everything inside was perfectly clean. No dust or mist has entered the sealed building all this time. Between bookshelfs, data bases and some ritualistic utensils a single interface stood out. While everything else was shut down the console before the team emitted a strong glow. Like moths it attracted the scientists. A single buttoncould was functional. Every other input had been deconstructed, as if somebody wanted us to press it."
  mem_eden_protocol.114.a:0 "Press the Button"
+ mem_eden_protocol.115.name:0 "REPLACE_ME"
+ mem_eden_protocol.115.desc:0 "REPLACE_ME"
+ mem_eden_protocol.115.a:0 "REPLACE_ME"
 
  building_mem_eden_protocol_da_organicbooster_1:0 "Cyborg Garden"
  building_mem_eden_protocol_da_organicbooster_1_desc:0 "This facility sees to every medical need of our integrated organic fosterlings. From a healthy body stems a healthy mind."
@@ -144,3 +147,5 @@
  building_mem_eden_protocol_scrap_miner_base_desc:0 "A rudimentary camp with the purpose of collecting and sorting various usable materials found within nearby urban ruins."
  
  MESSAGE_MEM_MADE_PRIMITIVE:0 "Pre-Ftls established"
+
+ mem_eden_protocol_destroyed_primitives:0 "Destroyed Pre-FTLs"

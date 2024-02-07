@@ -8,6 +8,7 @@ country_event = {
 		has_origin = origin_mem_eden_protocol
 	}
 	immediate = {
+		set_global_flag = origin_mem_eden_protocol_exists_somewhere
 		leader = {
 			add_trait_no_notify = leader_trait_legendary_mem_eden_protocol
 		}
@@ -1251,6 +1252,36 @@ planet_event = {
 				type = name
 				localization = PLANET
 				scope = this
+			}
+		}
+	}
+}
+
+#This = destroyed country
+#From = optional, destroyer (country)
+# when somebody invades or destroys otherwise eden protocol will get mad, yes even assimilator
+country_event = {
+	id = mem_eden_protocol.122
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_country_type = primitive		
+		NOT = {	
+			from = {
+				has_origin = origin_mem_eden_protocol	
+			}					
+		}
+		has_global_flag = origin_mem_eden_protocol_exists_somewhere
+	}
+	immediate = {
+		
+		every_country = {
+			limit = {
+				has_origin = origin_mem_eden_protocol
+			}
+			add_opinion_modifier = {
+				modifier = mem_eden_protocol_destroyed_primitives
+				who = root.from
 			}
 		}
 	}

@@ -18,7 +18,7 @@ mem_eden_protocol_devolve = {
 	stop_when_armies_dead = no
 	abduct_pops = no
 
-	planet_damage = 10 #TODO change to 0.8 after testing, icon
+	planet_damage = 0.8 
 	army_damage = 1
 
 	kill_pop_chance = { # should kill some in the process like other bombardments

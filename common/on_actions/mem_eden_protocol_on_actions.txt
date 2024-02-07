@@ -26,3 +26,11 @@ on_planet_bombarded = {
 		mem_eden_protocol.107 # devolve bombing
 	}
 }
+
+#This = destroyed country
+#From = optional, destroyer (country)
+on_country_destroyed = {
+	events = {
+		mem_eden_protocol.122 # hate people who destroy primitves
+	}
+}
