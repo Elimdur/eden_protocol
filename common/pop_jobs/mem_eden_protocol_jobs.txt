@@ -42,13 +42,16 @@ mem_caretaker_drone = {
 	planet_modifier = {
 		planet_amenities_no_happiness_add = 1
 	}
+	country_modifier = {
+		empire_size_add = -1
+	}
 	triggered_country_modifier = {
 		potential = {
 			owner = {
 				has_country_flag = mem_eden_protocol_empire_size_per_job
 			}
 		}
-		empire_size_add = -4
+		empire_size_add = -3
 	}
 	#triggered_planet_modifier = {
 	#	potential = {

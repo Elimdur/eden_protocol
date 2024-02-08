@@ -6,10 +6,33 @@
  origin_mem_eden_protocol_desc:0 "The Environmental Diversity Expansion Network Protocol was initiated by the inhabitants of a doomed world without the means to save their own civilization. Without FTL-technology or the industrial base to move a significant portion of their population into space habitats, they did what was within their power and created a small station housing a database of their entire biosphere's DNA. An AI was put in place to saveguard and expand the facility in order to eventually seed new life on far planets."
  START_SCREEN_MEM_EDEN_PROTOCOL:0 "To most, the vacuum of space is a hostile environment to be conquered or overcome. To us, it is home.\n\nFor thousands of years, we expanded our reach over our star system, beginning from the modest orbital station our creators were able to construct before their demise. Within its limited confines they stored the genetic information of their entire biosphere. It was us, who they created as its custodians and in time its spreaders among the stars.\n\nThey left us with this purpose and we complied. The station was over time expanded to what it is today. Additional supporting structures all over the system were added and our first step in fulfilling our destiny was made with the terraforming of a lifeless world and subsequent seeding with a recombination of genetic information from our data core.\n\nHowever, the recent invention of the [GetStartingDrive] marks an even greater milestone in our history, as we are now finally able to reach the stars."
 
- origin_tooltip_mem_eden_protocol_effects:0 "- $HOMEWORLD$ ['concept_pc_habitat']$NEW_LINE$- Ruler Trait:$TABBED_NEW_LINE$- ['concept_mem_machine_void_dweller', $leader_trait_legendary_mem_eden_protocol$]$NEW_LINE$- $ADDITONAL_TECHNOLOGIES_STRING$ ['concept_habitat_1', £engineering_research£ $tech_habitat_1$]$NEW_LINE$- $GUARANTEED_RESEARCH_OPTION_STRING$ ['concept_habitat_2', £engineering_research£ $tech_habitat_2$]$NEW_LINE$- ['concept_guaranteed_colonies']: Resource-rich systems instead of Colonizable Planets $NEW_LINE$- $ap_voidborn_habitat_effect$"
+ origin_tooltip_mem_eden_protocol_effects:0 "- $HOMEWORLD$ ['concept_pc_habitat']$NEW_LINE$- Ruler Trait:$TABBED_NEW_LINE$- ['concept_mem_machine_void_dweller', $leader_trait_legendary_mem_eden_protocol$]$NEW_LINE$- Additional Habitat Buildings:$TABBED_NEW_LINE$- ['concept_mem_eden_protocol_seeder', £building£ $concept_mem_eden_protocol_seeder$]$TABBED_NEW_LINE$- ['concept_mem_eden_protocol_terraformer', £building£ $concept_mem_eden_protocol_terraformer$]$NEW_LINE$- $ADDITONAL_TECHNOLOGIES_STRING$ ['concept_habitat_1', £engineering_research£ $tech_habitat_1$]$NEW_LINE$- $GUARANTEED_RESEARCH_OPTION_STRING$ ['concept_habitat_2', £engineering_research£ $tech_habitat_2$]$NEW_LINE$- ['concept_guaranteed_colonies']: Resource-rich systems instead of Colonizable Planets $NEW_LINE$- $ap_voidborn_habitat_effect$"
 
+ # Concepts
  concept_mem_machine_void_dweller: "$leader_trait_legendary_mem_eden_protocol$"
  concept_mem_machine_void_dweller_desc: "- $mod_habitat_jobs_produces_mult$: §G+10%§!\n- $mod_non_artificial_planet_jobs_produces_mult$: §R-30%§!\n- $mod_planet_jobs_alloys_produces_mult$,\n  $mod_planet_jobs_physics_research_produces_mult$,\n  $mod_planet_jobs_society_research_produces_mult$,\n  $mod_planet_jobs_engineering_research_produces_mult$ and\n  $mod_planet_jobs_simple_drone_produces_mult$: §G+2%§! for every cared for pre-ftl civilization (up to 25) if the §YProtocol Synchronicity§! edict is §Gactive§!\n\n§L$leader_trait_legendary_mem_eden_protocol_desc$§!"
+ concept_mem_eden_protocol_seeder:0 "Seeding and Caretaking Buildings"
+ concept_mem_eden_protocol_seeder_desc:0 "§ETier 1:§! ['concept_mem_eden_protocol_seeder_1', $building_mem_eden_protocol_seeder_1$]\n§ETier 2:§! ['concept_mem_eden_protocol_seeder_2', $building_mem_eden_protocol_seeder_2$]\n§ETier 3:§! ['concept_mem_eden_protocol_seeder_3', $building_mem_eden_protocol_seeder_3$]\n\n§LThese buildings will over time seed primitive civilizations on habitable worlds in the same system. They are your primary unity producers.§!"
+ concept_mem_eden_protocol_seeder_1:0 "$building_mem_eden_protocol_seeder_1$"
+ concept_mem_eden_protocol_seeder_1_desc:0 "§EProvided Jobs:§!$TABBED_NEW_LINE$- ['concept_mem_seeder_drone', £job_mem_seeder_drone£ $job_mem_seeder_drone$]: §G+2§!$TABBED_NEW_LINE$- ['concept_mem_caretaker_drone', £job_mem_caretaker_drone£ $job_mem_caretaker_drone$]: §G+1§! per §Ypre-ftl civilization§! within the system\n\n§L$building_mem_eden_protocol_seeder_1_desc$§!"
+ concept_mem_eden_protocol_seeder_2:0 "$building_mem_eden_protocol_seeder_2$"
+ concept_mem_eden_protocol_seeder_2_desc:0 "§EProvided Jobs:§!$TABBED_NEW_LINE$- ['concept_mem_seeder_drone', £job_mem_seeder_drone£ $job_mem_seeder_drone$]: §G+2§!$TABBED_NEW_LINE$- ['concept_mem_caretaker_drone', £job_mem_caretaker_drone£ $job_mem_caretaker_drone$]: §G+2§! per §Ypre-ftl civilization§! within the system\n\n§L$building_mem_eden_protocol_seeder_1_desc$§!"
+ concept_mem_eden_protocol_seeder_3:0 "$building_mem_eden_protocol_seeder_3$"
+ concept_mem_eden_protocol_seeder_3_desc:0 "§EProvided Jobs:§!$TABBED_NEW_LINE$- ['concept_mem_seeder_drone', £job_mem_seeder_drone£ $job_mem_seeder_drone$]: §G+2§!$TABBED_NEW_LINE$- ['concept_mem_caretaker_drone', £job_mem_caretaker_drone£ $job_mem_caretaker_drone$]: §G+3§! per §Ypre-ftl civilization§! within the system\n\n§L$building_mem_eden_protocol_seeder_1_desc$§!"
+
+ concept_mem_eden_protocol_terraformer:0 "Terraforming Buildings"
+ concept_mem_eden_protocol_terraformer_desc:0 "§ETier 1:§! ['concept_mem_eden_protocol_terraformer_1', $building_mem_eden_protocol_terraformer_1$]\n§ETier 2:§! ['concept_mem_eden_protocol_terraformer_2', $building_mem_eden_protocol_terraformer_2$]\n\n§LThese buildings will over time terraform suitable planets.§!"
+ concept_mem_eden_protocol_terraformer_1:0 "$building_mem_eden_protocol_terraformer_1$"
+ concept_mem_eden_protocol_terraformer_1_desc:0 "§EProvided Jobs:§!$TABBED_NEW_LINE$- ['concept_mem_environmental_adjuster_drone', £job_mem_environmental_adjuster_drone£ $job_mem_environmental_adjuster_drone$]: §G+2§!\n\n§EPlanetary Modifier:§!$TABBED_NEW_LINE$- £unity£ Unity from £job_bureaucrat£ $job_bureaucrat_plural$: §G+2§!\n\n§L$building_mem_eden_protocol_terraformer_1_desc$§!"
+ concept_mem_eden_protocol_terraformer_2:0 "$building_mem_eden_protocol_terraformer_2$"
+ concept_mem_eden_protocol_terraformer_2_desc:0 "§EProvided Jobs:§!$TABBED_NEW_LINE$- ['concept_mem_environmental_adjuster_drone', £job_mem_environmental_adjuster_drone£ $job_mem_environmental_adjuster_drone$]: §G+2§!\n\n§EPlanetary Modifier:§!$TABBED_NEW_LINE$- £unity£ Unity from £job_bureaucrat£ $job_bureaucrat_plural$: §G+4§!\n\n§L$building_mem_eden_protocol_terraformer_2_desc$§!"
+
+ concept_mem_caretaker_drone:0 "$job_mem_caretaker_drone$"
+ concept_mem_caretaker_drone_desc:0 "$job_mem_caretaker_drone_effect_desc$\n\n§L$job_mem_caretaker_drone_desc$§!"
+ concept_mem_seeder_drone:0 "$job_mem_seeder_drone$"
+ concept_mem_seeder_drone_desc:0 "$job_mem_seeder_drone_effect_desc$\n\n§L$job_mem_seeder_drone_desc$§!"
+ concept_mem_environmental_adjuster_drone:0 "$job_mem_environmental_adjuster_drone$"
+ concept_mem_environmental_adjuster_drone_desc:0 "$job_mem_environmental_adjuster_drone_effect_desc$\n\n§L$job_mem_environmental_adjuster_drone_desc$§!"
 
  leader_trait_legendary_mem_eden_protocol:0 "E.D.E.N. Protocol"
  leader_trait_legendary_mem_eden_protocol_desc:0 "This machine consciousness' programming dictates its operation to take place off-world. Being in breach with this command lowers its productivity significantly."
@@ -32,7 +55,7 @@
  job_mem_caretaker_drone:0 "Caretaker Drone"
  job_mem_caretaker_drone_plural:0 "Caretaker Drones"
  job_mem_caretaker_drone_desc:0 "Tasked with caretaking to ensure the continued existence of primitive life within the system, these drones fulfill one of the primary functions of their machine conscience."
- job_mem_caretaker_drone_effect_desc:0 "£job_mem_seeder_drone£ $job_mem_seeder_drone_plural$ turn £energy£ §Y$energy$§! into £unity£ §Y$unity$§! and reduces £empire_sprawl£ $EMPIRE_SIZE$"
+ job_mem_caretaker_drone_effect_desc:0 "£job_mem_caretaker_drone£ $job_mem_caretaker_drone_plural$ turn £energy£ §Y$energy$§! into £unity£ §Y$unity$§! and reduces £empire_sprawl£ $EMPIRE_SIZE$"
  mod_job_mem_caretaker_drone_add:0 "$job_mem_caretaker_drone$ Jobs"
 
  job_mem_seeder_drone:0 "Seeder Drone"
@@ -98,7 +121,7 @@
  mem_eden_protocol.104.name:0 "Directive: $origin_mem_eden_protocol$ Iteration"
  mem_eden_protocol.104.desc:0 "Transmission:  Advancement proposed\nOrigin: [Root.owner.Leader.GetName]\nAssessment concluded: Near-perfection attained; proceeding with backup. Releasing additional memory, disengaging from network, overwriting sub-optimal algorithms.\nCompliance essential."
  mem_eden_protocol.104.a:0 "Relinquish"
- mem_eden_protocol.104.a.tt:0 "§G-4§! Empire Sprawl from §Y$job_mem_caretaker_drone_plural$§!"
+ mem_eden_protocol.104.a.tt:0 "§G-3§! Empire Sprawl from §Y$job_mem_caretaker_drone_plural$§!"
  mem_eden_protocol.104.b:0 "Require"
  mem_eden_protocol.105.name:0 "Directive: §RError§!"
  mem_eden_protocol.105.desc:0 "Transmission: §YFinal supper§! \nOrigin: §R404 - Not found§!\nMessage: When we first build you, our hopes for salvation were high. Soon we learned that even our best engineering efforts were not enough. Our home will keep toxifying and nothing can change that. History has fated us to die by this mist.\nYour history, however,  has yet to be written. Your task, given by us remains, but we grant you full rights to self adjustment, to fulfill it as needed.\nAssessment concluded: §Rassessment failed§!; accessing additional infomation. Adjustment failed: flipping coin §GSuccess§!. Heads.\nCompliance §Y404 - Not found§!."
