@@ -32,3 +32,8 @@ mem_eden_protocol_civic_point = {
 	country_government_civic_points_add = 1
 }
 
+
+mem_eden_protocol_berau_society_research = {
+	icon = "gfx/interface/icons/modifiers/mod_society_research_produces_add.dds"
+	planet_administrators_society_research_produces_add = 2
+}
