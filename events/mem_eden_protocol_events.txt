@@ -263,11 +263,22 @@ country_event = {
 			}
 			if = {
 				limit = {
-					owner = {
-						NOT = {
-							has_country_flag = mem_eden_protocol_terraforming_pause
-						}
-					}
+					NOT = {
+						is_variable_set = mem_eden_protocol_terraforming_progress
+					}					
+				}
+				set_variable = {
+					which = mem_eden_protocol_terraforming_progress
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					# owner = {
+					# 	NOT = {
+					# 		has_country_flag = mem_eden_protocol_terraforming_pause
+					# 	}
+					# }
 					OR = {
 						has_building = building_mem_eden_protocol_terraformer_1
 						has_building = building_mem_eden_protocol_terraformer_2
@@ -290,15 +301,38 @@ country_event = {
 					}
 				}
 				random_list = {
-					90 = {
+					60 = {
 					}
-					10 = {
+					1 = {
+						modifier = {
+							check_variable = {
+								which = mem_eden_protocol_terraforming_progress
+								value > 0
+							}
+							factor = mem_eden_protocol_terraforming_progress
+						}
+						modifier = {
+							check_variable = {
+								which = mem_eden_protocol_terraforming_progress
+								value < 1
+							}
+							factor = 0
+						}
+						set_variable = {
+							which = mem_eden_protocol_terraforming_progress
+							value = -1
+						}
 						solar_system = {
 							random_system_planet = {
 								limit = {
 									OR = {
 										has_modifier = terraforming_candidate
-										is_planet_class = pc_nuked
+										AND = {
+											is_planet_class = pc_nuked
+											NOT = {
+												exists = owner
+											}
+										}										
 									}
 									OR = {
 										NOT = {
@@ -313,13 +347,9 @@ country_event = {
 							}
 						}
 						owner = {
-							set_timed_country_flag = {
-								flag = mem_eden_protocol_terraforming_pause
-								years = 3
-							}
-							# add_monthly_resource_mult = {
-							# 	resource = unity
-							# 	value = 2
+							# set_timed_country_flag = {
+							# 	flag = mem_eden_protocol_terraforming_pause
+							# 	years = 3
 							# }
 							country_event = {
 								id = mem_eden_protocol.3
@@ -333,11 +363,11 @@ country_event = {
 			}
 			if = {
 				limit = {
-					owner = {
-						NOT = {
-							has_country_flag = mem_eden_protocol_terraforming_pause
-						}
-					}
+					# owner = {
+					# 	NOT = {
+					# 		has_country_flag = mem_eden_protocol_terraforming_pause
+					# 	}
+					# }
 					has_building = building_mem_eden_protocol_terraformer_2
 					solar_system = {
 						any_system_planet = {
@@ -349,9 +379,27 @@ country_event = {
 					}
 				}
 				random_list = {
-					90 = {
+					60 = {
 					}
-					10 = {
+					1 = {
+						modifier = {
+							check_variable = {
+								which = mem_eden_protocol_terraforming_progress
+								value > 0
+							}
+							factor = mem_eden_protocol_terraforming_progress
+						}
+						modifier = {
+							check_variable = {
+								which = mem_eden_protocol_terraforming_progress
+								value < 1
+							}
+							factor = 0
+						}
+						set_variable = {
+							which = mem_eden_protocol_terraforming_progress
+							value = -1
+						}
 						solar_system = {
 							random_system_planet = {
 								limit = {
@@ -364,13 +412,9 @@ country_event = {
 							}
 						}
 						owner = {
-							set_timed_country_flag = {
-								flag = mem_eden_protocol_terraforming_pause
-								years = 3
-							}
-							# add_monthly_resource_mult = {
-							# 	resource = unity
-							# 	value = 2
+							# set_timed_country_flag = {
+							# 	flag = mem_eden_protocol_terraforming_pause
+							# 	years = 3
 							# }
 							country_event = {
 								id = mem_eden_protocol.3
@@ -384,11 +428,11 @@ country_event = {
 			}
 			if = {
 				limit = {
-					owner = {
-						NOT = {
-							has_country_flag = mem_eden_protocol_terraforming_pause
-						}
-					}
+					# owner = {
+					# 	NOT = {
+					# 		has_country_flag = mem_eden_protocol_terraforming_pause
+					# 	}
+					# }
 					has_building = building_mem_eden_protocol_terraformer_2
 					solar_system = {
 						any_system_planet = {
@@ -408,9 +452,27 @@ country_event = {
 					}
 				}
 				random_list = {
-					90 = {
+					80 = {
 					}
-					10 = {
+					1 = {
+						modifier = {
+							check_variable = {
+								which = mem_eden_protocol_terraforming_progress
+								value > 0
+							}
+							factor = mem_eden_protocol_terraforming_progress
+						}
+						modifier = {
+							check_variable = {
+								which = mem_eden_protocol_terraforming_progress
+								value < 1
+							}
+							factor = 0
+						}
+						set_variable = {
+							which = mem_eden_protocol_terraforming_progress
+							value = -1
+						}
 						solar_system = {
 							random_system_planet = {
 								limit = {
@@ -431,13 +493,9 @@ country_event = {
 							}
 						}
 						owner = {
-							set_timed_country_flag = {
-								flag = mem_eden_protocol_terraforming_pause
-								years = 3
-							}
-							# add_monthly_resource_mult = {
-							# 	resource = unity
-							# 	value = 6
+							# set_timed_country_flag = {
+							# 	flag = mem_eden_protocol_terraforming_pause
+							# 	years = 3
 							# }
 							country_event = {
 								id = mem_eden_protocol.4
@@ -448,6 +506,61 @@ country_event = {
 					}
 				}
 				reroll_random = yes
+			}
+			# increase terraforming variable by 1 ( if terraforming has happened, the outcome will be 0 ), if there is a valid planet for terraforming
+			if = {
+				limit = {
+					OR = {
+						has_active_building = building_mem_eden_protocol_terraformer_1
+						has_active_building = building_mem_eden_protocol_terraformer_2
+					}
+					solar_system = {
+						any_system_planet = {
+							OR = {
+								NOT = {
+									exists = owner
+								}
+								AND = {
+									exists = owner
+									owner = {
+										is_country_type = primitive
+									}
+								}
+							}
+							OR = {
+								AND = {
+									# back to check on habitat for this condition
+									prevprev = {
+										has_building = building_mem_eden_protocol_terraformer_2
+									}
+									OR = {
+										has_modifier = frozen_terraforming_candidate
+										has_modifier = toxic_terraforming_candidate
+										habitable_planet_not_urban = yes
+									}
+								}
+								has_modifier = terraforming_candidate
+								AND = {
+									is_planet_class = pc_nuked
+									NOT = {
+										exists = owner
+									}									
+								}
+							}
+						}
+					}
+				}
+				change_variable = {
+					which = mem_eden_protocol_terraforming_progress
+					value = 1
+				}
+			}
+			# if there is no valid target progress is reset to 0
+			else = {
+				set_variable = {
+					which = mem_eden_protocol_terraforming_progress
+					value = 0
+				}
 			}
 			save_event_target_as = mem_eden_protocol_habitat
 			set_variable = {
@@ -526,8 +639,78 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		event_target:mem_eden_protocol_terraforming_target = {
+			if = {
+				limit = {
+					is_planet_class = pc_nuked
+				}
+				set_timed_planet_flag = {
+					flag = mem_was_nuked
+					days = 10
+				}
+			}
 			change_pc = rl_habitable_normal
 			reroll_planet = yes
+			if = {
+				limit = {
+					has_planet_flag = mem_was_nuked
+				}
+				add_blocker = {
+					type = d_dangerous_wildlife_blocker
+				}
+				add_blocker = {
+					type = d_dangerous_wildlife_blocker
+				}
+				add_blocker = {
+					type = d_dangerous_wildlife_blocker
+				}
+				add_blocker = {
+					type = d_dangerous_wildlife_blocker
+				}
+				add_blocker = {
+					type = d_active_volcano
+				}
+				add_blocker = {
+					type = d_active_volcano
+				}
+				add_blocker = {
+					type = d_active_volcano
+				}
+				add_blocker = {
+					type = d_mountain_range
+				}
+				add_blocker = {
+					type = d_mountain_range
+				}
+			}
+			else = {
+				add_blocker = {
+					type = d_dangerous_wildlife_blocker
+				}
+				add_blocker = {
+					type = d_active_volcano
+				}
+				add_blocker = {
+					type = d_active_volcano
+				}
+				add_blocker = {
+					type = d_active_volcano
+				}
+				add_blocker = {
+					type = d_active_volcano
+				}
+				add_blocker = {
+					type = d_mountain_range
+				}
+				add_blocker = {
+					type = d_mountain_range
+				}
+				add_blocker = {
+					type = d_mountain_range
+				}
+				add_blocker = {
+					type = d_mountain_range
+				}
+			}
 			if = {
 				limit = {
 					has_modifier = terraforming_candidate

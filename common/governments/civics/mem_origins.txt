@@ -178,7 +178,9 @@ origin_mem_eden_protocol = {
 	}
 
 	possible = {
-		species_archetype = { value = MACHINE }
+		authority = { 
+			value = auth_machine_intelligence
+		}
 		civics = {
 			NOR = { 
 				value = civic_machine_assimilator
@@ -189,10 +191,6 @@ origin_mem_eden_protocol = {
 	}
 
 	description = "origin_tooltip_mem_eden_protocol_effects"
-
-	potential = {
-		species_archetype = { value = MACHINE }
-	}
 
 	modifier = {
 		megastructures_habitat_cost_mult = -0.25
