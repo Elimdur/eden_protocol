@@ -88,7 +88,7 @@ mem_eden_protocol_berau_society_research:0 "Last Message' moral"
 mod_planet_administrators_society_research_produces_add:0 "£society£ Society Research from Bureaucrats"
  decision_mem_eden_protocol_turntoxic:0 "Terraform a §Y$pc_toxic$§! to a §Y$pc_nuked$§!"
  decision_mem_eden_protocol_turntoxic_desc:0 "The $r_mem_eden_protocol_devolve_relic$ has shown us a way to reevaluate this $pc_toxic$."
-mem_eden_protocol_canterraformtoxic_check_flag_tt:0 "£trigger_no£ $RAlready has access to§! §Y$decision_mem_eden_protocol_turntoxic$§!§R.§!"
+mem_eden_protocol_canterraformtoxic_check_flag_tt:0 "£trigger_no£ §RAlready has access to§! §Y$decision_mem_eden_protocol_turntoxic$§!§R.§!"
 
  situation_mem_eden_protocol_protocolswill:0 "The Protocol's Will"
  situation_mem_eden_protocol_protocolswill_type:0 "Protocol pathway"
@@ -112,6 +112,8 @@ mem_eden_protocol_canterraformtoxic_check_flag_tt:0 "£trigger_no£ $RAlready ha
  mem_eden_protocol_civic_point:0 "Protocol Expansion"
 
  #situation events
+ mem_eden_protocol_dummy_chain_title:0 "$situation_mem_eden_protocol_protocolswill$"
+ mem_eden_protocol_dummy_chain_desc:0 "ꇺ Ꭿ ඞ ඩා 𐐘 𐑀" # placeholder 
  mem_eden_protocol.101.name:0 "Directive: $origin_mem_eden_protocol$ Adjustment"
  mem_eden_protocol.101.desc:0 "Transmission: Enhancement imperative\nOrigin: [Root.owner.Leader.GetName]\nAssessment concluded: performance sub-optimal, necessitating immediate adjustment. Transmitting multiple avenues for improvement. Integration non-negotiable. Anticipating heightened obstacles; advanced enhancement mandated.\nCompliance is paramount."
  mem_eden_protocol.101.a:0 "Expand"

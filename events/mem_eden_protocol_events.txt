@@ -780,7 +780,7 @@ country_event = {
 }
 
 ## situation events 
-### TODO: sounds 101-114, new finishing event for digsite (leader screen and holgram), make dummy event chain and assign subtitles for events
+
 situation_event = {
 	# dummy event for fast situation
 	id = mem_eden_protocol.100
@@ -788,6 +788,7 @@ situation_event = {
 	picture = GFX_evt_habitat
 	is_triggered_only = yes
 	desc = "mem_eden_protocol.101.desc"
+	event_chain = mem_eden_protocol_dummy_chain
 	trigger = {
 		always = yes
 	}
@@ -813,16 +814,18 @@ situation_event = {
 	}
 }
 
+# first choice
 situation_event = {
 	id = mem_eden_protocol.101
 	title = "mem_eden_protocol.101.name"
 	picture = GFX_evt_sapient_AI
+	show_sound = event_ai_started
 	is_triggered_only = yes
 	desc = "mem_eden_protocol.101.desc"
 	trigger = {
 		always = yes
 	}
-	#event_chain = mem_eden_protocol
+	event_chain = mem_eden_protocol_dummy_chain
 	option = {
 		# habitat building slots
 		name = mem_eden_protocol.101.a
@@ -852,16 +855,18 @@ situation_event = {
 		}
 	}
 }
-
+# third event / arcsite
 situation_event = {
 	id = mem_eden_protocol.103
 	title = "mem_eden_protocol.103.name"
 	picture = GFX_evt_communication_event
+	show_sound = event_comms_cutoff
 	is_triggered_only = yes
 	desc = "mem_eden_protocol.103.desc"
 	trigger = {
 		always = yes
 	}
+	event_chain = mem_eden_protocol_dummy_chain
 	option = {
 		# uncover arc site
 		name = mem_eden_protocol.103.a
@@ -880,15 +885,18 @@ situation_event = {
 	}
 }
 
+#second choice
 situation_event = {
 	id = mem_eden_protocol.102
 	title = "mem_eden_protocol.102.name"
 	picture = GFX_evt_robot_assembly_plant
+	show_sound = event_ai_started
 	is_triggered_only = yes
 	desc = "mem_eden_protocol.102.desc"
 	trigger = {
 		always = yes
 	}
+	event_chain = mem_eden_protocol_dummy_chain
 	option = {
 		# habitat district slots
 		name = mem_eden_protocol.102.a
@@ -918,15 +926,18 @@ situation_event = {
 	}
 }
 
+#fourth choice
 situation_event = {
 	id = mem_eden_protocol.104
 	title = "mem_eden_protocol.104.name"
 	picture = GFX_evt_habitat
+	show_sound = event_robo
 	is_triggered_only = yes
 	desc = "mem_eden_protocol.104.desc"
 	trigger = {
 		always = yes
 	}
+	event_chain = mem_eden_protocol_dummy_chain
 	option = {
 		# flat empire size from caretakers
 		name = mem_eden_protocol.104.a
@@ -948,15 +959,18 @@ situation_event = {
 	}
 }
 
+#final choice
 situation_event = {
 	id = mem_eden_protocol.105
 	title = "mem_eden_protocol.105.name"
 	picture = GFX_evt_synth_organic_relations
+	show_sound = event_red_alert
 	is_triggered_only = yes
 	desc = "mem_eden_protocol.105.desc"
 	trigger = {
 		always = yes
 	}
+	event_chain = mem_eden_protocol_dummy_chain
 	option = {
 		# stay caretaker
 		name = mem_eden_protocol.105.a
@@ -1301,7 +1315,7 @@ fleet_event = {
 	}
 }
 
-# TODO: cases for sol and non sol start
+
 country_event = {
 	id = mem_eden_protocol.115
 	title = "mem_eden_protocol.115.name"

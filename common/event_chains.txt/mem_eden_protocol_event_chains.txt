@@ -1,0 +1,8 @@
+mem_eden_protocol_dummy_chain = {
+	# should be all
+	#counter = {
+	#	test_counter = {
+	#		max = 6
+	#	}
+	#}
+}
