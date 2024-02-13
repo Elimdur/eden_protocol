@@ -197,7 +197,7 @@ mem_environmental_adjuster_drone = {
 	}
 }
 
-mem_organic_booster = {
+mem_organic_booster_drone = {
 	icon = xeno_zoo_keeper
 	category = complex_drone
 	condition_string = DRONE_JOB_TRIGGER

@@ -553,7 +553,7 @@ building_mem_eden_protocol_da_organicbooster_1 = {
 		}
 	}
 	planet_modifier = {
-		job_mem_organic_booster_add = 2
+		job_mem_organic_booster_drone_add = 2
 	}
 	ai_weight = {
 		weight = 1000
@@ -596,7 +596,7 @@ building_mem_eden_protocol_da_organicbooster_2 = {
 		}
 	}
 	planet_modifier = {
-		job_mem_organic_booster_add = 4
+		job_mem_organic_booster_drone_add = 4
 	}
 	ai_weight = {
 		weight = 1000

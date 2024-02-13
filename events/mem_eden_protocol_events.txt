@@ -833,13 +833,13 @@ country_event = {
 
 ## situation events 
 
+# dummy event for fast situation
 situation_event = {
-	# dummy event for fast situation
 	id = mem_eden_protocol.100
-	title = "mem_eden_protocol.101.name"
+	title = mem_eden_protocol.101.name
 	picture = GFX_evt_habitat
 	is_triggered_only = yes
-	desc = "mem_eden_protocol.101.desc"
+	desc = mem_eden_protocol.101.desc
 	event_chain = mem_eden_protocol_dummy_chain
 	trigger = {
 		always = yes
@@ -869,11 +869,11 @@ situation_event = {
 # first choice
 situation_event = {
 	id = mem_eden_protocol.101
-	title = "mem_eden_protocol.101.name"
+	title = mem_eden_protocol.101.name
 	picture = GFX_evt_sapient_AI
 	show_sound = event_ai_started
 	is_triggered_only = yes
-	desc = "mem_eden_protocol.101.desc"
+	desc = mem_eden_protocol.101.desc
 	trigger = {
 		always = yes
 	}
@@ -911,11 +911,11 @@ situation_event = {
 # second choice
 situation_event = {
 	id = mem_eden_protocol.102
-	title = "mem_eden_protocol.102.name"
+	title = mem_eden_protocol.102.name
 	picture = GFX_evt_robot_assembly_plant
 	show_sound = event_ai_started
 	is_triggered_only = yes
-	desc = "mem_eden_protocol.102.desc"
+	desc = mem_eden_protocol.102.desc
 	trigger = {
 		always = yes
 	}
@@ -953,10 +953,10 @@ situation_event = {
 # third event / arcsite
 situation_event = {
 	id = mem_eden_protocol.103
-	title = "mem_eden_protocol.103.name"
+	title = mem_eden_protocol.103.name
 	picture = GFX_evt_communication_event
 	is_triggered_only = yes
-	desc = "mem_eden_protocol.103.desc"
+	desc = mem_eden_protocol.103.desc
 	trigger = {
 		always = yes
 	}
@@ -981,11 +981,11 @@ situation_event = {
 # third choice
 situation_event = {
 	id = mem_eden_protocol.104
-	title = "mem_eden_protocol.104.name"
+	title = mem_eden_protocol.104.name
 	picture = GFX_evt_habitat
 	show_sound = event_robo
 	is_triggered_only = yes
-	desc = "mem_eden_protocol.104.desc"
+	desc = mem_eden_protocol.104.desc
 	trigger = {
 		always = yes
 	}
@@ -1014,11 +1014,11 @@ situation_event = {
 # final choice
 situation_event = {
 	id = mem_eden_protocol.105
-	title = "mem_eden_protocol.105.name"
+	title = mem_eden_protocol.105.name
 	picture = GFX_evt_synth_organic_relations
 	show_sound = event_red_alert
 	is_triggered_only = yes
-	desc = "mem_eden_protocol.105.desc"
+	desc = mem_eden_protocol.105.desc
 	trigger = {
 		always = yes
 	}
@@ -1043,10 +1043,10 @@ situation_event = {
 		owner = {
 			add_modifier = {
 				modifier = mem_eden_protocol_civic_point
-			}
-			force_add_civic = civic_machine_servitor
+			}			
 			custom_tooltip = mem_eden_protocol.105.b.tt			# periodic pops, caretaker produce consumer goods
 			hidden_effect = {
+				force_add_civic = civic_machine_servitor
 				set_country_flag = mem_eden_protocol_became_servitor
 			}
 		}
@@ -1057,8 +1057,7 @@ situation_event = {
 		owner = {
 			add_modifier = {
 				modifier = mem_eden_protocol_civic_point
-			}
-			force_add_civic = civic_machine_assimilator
+			}			
 			custom_tooltip = mem_eden_protocol.105.c.tt			# caretaker boost cybernetic pops, building can be build everywhere, invade all pre-ftl
 			set_policy = {
 				policy = interference
@@ -1066,6 +1065,7 @@ situation_event = {
 			}
 			set_policy_cooldown = interference
 			hidden_effect = {
+				force_add_civic = civic_machine_assimilator
 				set_country_flag = mem_eden_protocol_became_assimilator
 				every_owned_planet = {
 					limit = {
@@ -1240,8 +1240,8 @@ planet_event = {
 # devolve_relic arc site events
 fleet_event = {
 	id = mem_eden_protocol.111
-	title = "mem_eden_protocol.111.name"
-	desc = "mem_eden_protocol.111.desc"
+	title = mem_eden_protocol.111.name
+	desc = mem_eden_protocol.111.desc
 	picture = GFX_evt_toxic
 	show_sound = event_dig_site
 	archaeology = yes
@@ -1271,8 +1271,8 @@ fleet_event = {
 
 fleet_event = {
 	id = mem_eden_protocol.112
-	title = "mem_eden_protocol.112.name"
-	desc = "mem_eden_protocol.112.desc"
+	title = mem_eden_protocol.112.name
+	desc = mem_eden_protocol.112.desc
 	picture = GFX_evt_underground_civilization
 	show_sound = event_dig_site
 	archaeology = yes
@@ -1302,8 +1302,8 @@ fleet_event = {
 
 fleet_event = {
 	id = mem_eden_protocol.113
-	title = "mem_eden_protocol.113.name"
-	desc = "mem_eden_protocol.113.desc"
+	title = mem_eden_protocol.113.name
+	desc = mem_eden_protocol.113.desc
 	picture = GFX_evt_underground_city
 	show_sound = event_dig_site
 	archaeology = yes
@@ -1333,8 +1333,8 @@ fleet_event = {
 
 fleet_event = {
 	id = mem_eden_protocol.114
-	title = "mem_eden_protocol.114.name"
-	desc = "mem_eden_protocol.114.desc"
+	title = mem_eden_protocol.114.name
+	desc = mem_eden_protocol.114.desc
 	picture = GFX_evt_glitchy_matrix
 	show_sound = event_dig_site
 	archaeology = yes
@@ -1362,8 +1362,8 @@ fleet_event = {
 
 country_event = {
 	id = mem_eden_protocol.115
-	title = "mem_eden_protocol.115.name"
-	desc = "mem_eden_protocol.115.desc"
+	title = mem_eden_protocol.115.name
+	desc = mem_eden_protocol.115.desc
 	picture = GFX_evt_toxic
 	show_sound = event_first_contact_toxoid
 	is_triggered_only = yes
