@@ -1,4 +1,42 @@
 namespace = mem_eden_protocol
+
+############################################################################################################
+# E.D.E.N. Protocol Origin
+############################################################################################################
+# mem_eden_protocol.1   |	Gamestart setup
+# mem_eden_protocol.2   |	Yearly Pulse event for seeding and terraforming
+# mem_eden_protocol.3   |	Notification for standard terraforming
+# mem_eden_protocol.4   |	Notification for gaia terraforming
+# mem_eden_protocol.5   |	Notification for primitive seeding
+############################################################################################################
+# Situation Events
+############################################################################################################
+# mem_eden_protocol.100 |	Test Event to quickly progress the situation
+# mem_eden_protocol.101 |	Directive: E.D.E.N. Protocol Adjustment
+# mem_eden_protocol.102 |	Directive: E.D.E.N. Protocol Improvment
+# mem_eden_protocol.103 |	Incoming Signals Detected - Arc site uncovered
+# mem_eden_protocol.104 |	Directive: E.D.E.N. Protocol Iteration
+# mem_eden_protocol.105 |	Directive: Error - 3 Choices how to change empire
+############################################################################################################
+# Mechanical Events
+############################################################################################################
+# mem_eden_protocol.106 |	Primitives being invaded by taking assimilator option
+# mem_eden_protocol.107 |	Planet turned into primitive civ by bombardment
+############################################################################################################
+# Arc Site Events
+############################################################################################################
+# mem_eden_protocol.111 |	Stage 1
+# mem_eden_protocol.112 |	Stage 2
+# mem_eden_protocol.113 |	Stage 3
+# mem_eden_protocol.114 |	Stage 4 End Opens Message
+# mem_eden_protocol.115 |	Message Event with hologram
+############################################################################################################
+# Mechanical Events
+############################################################################################################
+# mem_eden_protocol.121 |	Get biotrophies from primitives as servitor
+# mem_eden_protocol.122 |	Somebody invaded primitives or otherwise destroyed them. We disapprove...
+############################################################################################################
+
 # fired at gamestart to setup the habitat
 country_event = {
 	id = mem_eden_protocol.1
@@ -343,7 +381,7 @@ country_event = {
 										}
 									}
 								}
-								save_event_target_as = mem_eden_protocol_terraforming_target
+								set_planet_flag = mem_eden_protocol_terraforming_target
 							}
 						}
 						owner = {
@@ -408,7 +446,7 @@ country_event = {
 										has_modifier = frozen_terraforming_candidate
 									}
 								}
-								save_event_target_as = mem_eden_protocol_terraforming_target
+								set_planet_flag = mem_eden_protocol_terraforming_target
 							}
 						}
 						owner = {
@@ -489,7 +527,7 @@ country_event = {
 										}
 									}
 								}
-								save_event_target_as = mem_eden_protocol_terraforming_target
+								set_planet_flag = mem_eden_protocol_terraforming_target_gaia
 							}
 						}
 						owner = {
@@ -638,6 +676,13 @@ country_event = {
 	location = event_target:mem_eden_protocol_terraforming_target
 	is_triggered_only = yes
 	immediate = {
+		random_planet_within_border = {
+			limit = {
+				has_planet_flag = mem_eden_protocol_terraforming_target
+			}
+			save_event_target_as = mem_eden_protocol_terraforming_target
+			remove_planet_flag = mem_eden_protocol_terraforming_target
+		}
 		event_target:mem_eden_protocol_terraforming_target = {
 			if = {
 				limit = {
@@ -746,6 +791,13 @@ country_event = {
 	location = event_target:mem_eden_protocol_terraforming_target
 	is_triggered_only = yes
 	immediate = {
+		random_planet_within_border = {
+			limit = {
+				has_planet_flag = mem_eden_protocol_terraforming_target_gaia
+			}
+			save_event_target_as = mem_eden_protocol_terraforming_target
+			remove_planet_flag = mem_eden_protocol_terraforming_target_gaia
+		}
 		event_target:mem_eden_protocol_terraforming_target = {
 			change_pc = pc_gaia
 			reroll_planet = yes
@@ -794,23 +846,23 @@ situation_event = {
 	}
 	option = {
 		name = mem_eden_protocol.101.a
-		add_situation_progress = 100
+		add_situation_progress = 1000
 	}
 	option = {
 		name = mem_eden_protocol.101.a
-		add_situation_progress = 200
+		add_situation_progress = 2000
 	}
 	option = {
 		name = mem_eden_protocol.101.a
-		add_situation_progress = 300
+		add_situation_progress = 3000
 	}
 	option = {
 		name = mem_eden_protocol.101.a
-		add_situation_progress = 400
+		add_situation_progress = 4000
 	}
 	option = {
 		name = mem_eden_protocol.101.a
-		add_situation_progress = 500
+		add_situation_progress = 5000
 	}
 }
 
@@ -855,37 +907,8 @@ situation_event = {
 		}
 	}
 }
-# third event / arcsite
-situation_event = {
-	id = mem_eden_protocol.103
-	title = "mem_eden_protocol.103.name"
-	picture = GFX_evt_communication_event
-	show_sound = event_comms_cutoff
-	is_triggered_only = yes
-	desc = "mem_eden_protocol.103.desc"
-	trigger = {
-		always = yes
-	}
-	event_chain = mem_eden_protocol_dummy_chain
-	option = {
-		# uncover arc site
-		name = mem_eden_protocol.103.a
-		owner = {
-			home_planet = {
-				solar_system = {
-					random_system_planet = {
-						limit = {
-							has_planet_flag = mem_eden_protocol_old_homeworld
-						}
-						create_archaeological_site = mem_eden_protocol_devolve_relic_digsite
-					}
-				}
-			}
-		}
-	}
-}
 
-#second choice
+# second choice
 situation_event = {
 	id = mem_eden_protocol.102
 	title = "mem_eden_protocol.102.name"
@@ -926,7 +949,36 @@ situation_event = {
 	}
 }
 
-#fourth choice
+
+# third event / arcsite
+situation_event = {
+	id = mem_eden_protocol.103
+	title = "mem_eden_protocol.103.name"
+	picture = GFX_evt_communication_event
+	is_triggered_only = yes
+	desc = "mem_eden_protocol.103.desc"
+	trigger = {
+		always = yes
+	}
+	option = {
+		# uncover arc site
+		name = mem_eden_protocol.103.a
+		owner = {
+			home_planet = {
+				solar_system = {
+					random_system_planet = {
+						limit = {
+							has_planet_flag = mem_eden_protocol_old_homeworld
+						}
+						create_archaeological_site = mem_eden_protocol_devolve_relic_digsite
+					}
+				}
+			}
+		}
+	}
+}
+
+# third choice
 situation_event = {
 	id = mem_eden_protocol.104
 	title = "mem_eden_protocol.104.name"
@@ -959,7 +1011,7 @@ situation_event = {
 	}
 }
 
-#final choice
+# final choice
 situation_event = {
 	id = mem_eden_protocol.105
 	title = "mem_eden_protocol.105.name"
@@ -979,10 +1031,9 @@ situation_event = {
 				modifier = mem_eden_protocol_civic_point
 			}
 			custom_tooltip = mem_eden_protocol.105.a.tt			# unlock gaia forming and final building tier, pre ftl boost unity, get full machine world bonus from building
-			hidden_effect = {
+			hidden_effect = {				
+				# gives acces to caretaker tier 3 and terraformer tier 2
 				set_country_flag = mem_eden_protocol_stayed_caretaker
-				set_country_flag = mem_eden_protocol_seeder_3_allowed
-				set_country_flag = mem_eden_protocol_gaiaforming_allowed
 			}
 		}
 	}
@@ -1037,13 +1088,6 @@ situation_event = {
 							has_building = building_mem_eden_protocol_seeder_2
 						}
 						remove_building = building_mem_eden_protocol_seeder_2
-						add_building = building_mem_eden_protocol_da_organicbooster_2
-					}
-					else_if = {
-						limit = {
-							has_building = building_mem_eden_protocol_seeder_3
-						}
-						remove_building = building_mem_eden_protocol_seeder_3
 						add_building = building_mem_eden_protocol_da_organicbooster_2
 					}
 					#if = {
@@ -1418,6 +1462,7 @@ country_event = {
 	}
 }
 
+# on_colony_10_year_pulse
 # on action get primitive to pamper
 planet_event = {
 	id = mem_eden_protocol.121
@@ -1427,12 +1472,19 @@ planet_event = {
 		OR = {
 			has_building = building_mem_eden_protocol_seeder_1
 			has_building = building_mem_eden_protocol_seeder_2
-			has_building = building_mem_eden_protocol_seeder_3
 		}
 		exists = owner
 		owner = {
 			has_origin = origin_mem_eden_protocol
 			has_valid_civic = civic_machine_servitor
+		}
+		solar_system = {
+			any_system_planet = {
+				exists = owner
+				owner = {
+					is_country_type = primitive
+				}
+			}
 		}
 	}
 	immediate = {

@@ -290,7 +290,7 @@ building_mem_eden_protocol_seeder_3 = {
 	}
 	potential = {
 		owner = {
-			has_country_flag = mem_eden_protocol_seeder_3_allowed
+			has_country_flag = mem_eden_protocol_stayed_caretaker
 		}
 	}
 	planet_modifier = {
@@ -351,7 +351,7 @@ building_mem_eden_protocol_terraformer_1 = {
 					AND = {
 						root = {
 							owner = {
-								has_country_flag = mem_eden_protocol_gaiaforming_allowed
+								has_country_flag = mem_eden_protocol_stayed_caretaker
 							}
 						}
 						OR = {
@@ -395,7 +395,7 @@ building_mem_eden_protocol_terraformer_1 = {
 							AND = {
 								root = {
 									owner = {
-										has_country_flag = mem_eden_protocol_gaiaforming_allowed
+										has_country_flag = mem_eden_protocol_stayed_caretaker
 									}
 								}
 								OR = {
@@ -467,7 +467,7 @@ building_mem_eden_protocol_terraformer_2 = {
 							AND = {
 								root = {
 									owner = {
-										has_country_flag = mem_eden_protocol_gaiaforming_allowed
+										has_country_flag = mem_eden_protocol_stayed_caretaker
 									}
 								}
 								OR = {
@@ -483,7 +483,7 @@ building_mem_eden_protocol_terraformer_2 = {
 	}
 	potential = {
 		owner = {
-			has_country_flag = mem_eden_protocol_gaiaforming_allowed
+			has_country_flag = mem_eden_protocol_stayed_caretaker
 		}
 	}
 	planet_modifier = {
