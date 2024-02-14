@@ -99,6 +99,9 @@ situation_mem_eden_protocol_protocolswill = {
 		#on_select = {
 		#custom_tooltip = studying_insights_tt
 		#}
+		modifier = {
+			country_unity_produces_mult = -0.2
+		}
 		resources = {
 			category = situations
 			upkeep = {
