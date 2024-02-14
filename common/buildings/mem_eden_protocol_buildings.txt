@@ -410,7 +410,7 @@ building_mem_eden_protocol_terraformer_1 = {
 		}
 	}
 	planet_modifier = {
-		planet_administrators_unity_produces_add = 2
+		planet_administrators_unity_produces_add = 1
 		job_mem_environmental_adjuster_drone_add = 1
 	}
 	ai_weight = {
@@ -487,7 +487,7 @@ building_mem_eden_protocol_terraformer_2 = {
 		}
 	}
 	planet_modifier = {
-		planet_administrators_unity_produces_add = 4
+		planet_administrators_unity_produces_add = 2
 		job_mem_environmental_adjuster_drone_add = 1
 	}
 	triggered_planet_modifier = {
