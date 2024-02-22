@@ -3,6 +3,6 @@ tags={
 	"Events"
 	"Gameplay"
 }
-name="eden_protocol"
+name="E.D.E.N. Protocol"
 supported_version="3.10.4"
-remote_file_id="3156469525"
+remote_file_id="3161229014"

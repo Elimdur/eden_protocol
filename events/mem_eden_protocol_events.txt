@@ -177,7 +177,7 @@ country_event = {
 	}
 }
 
-#test for yearly pulse event
+#yearly pulse event
 country_event = {
 	id = mem_eden_protocol.2
 	hide_window = yes
@@ -189,11 +189,24 @@ country_event = {
 		if = {
 			limit = {
 				NOT = {
-					has_country_flag = mem_eden_protocol_changed_direction
+					has_country_flag = mem_eden_protocol_became_assimilator
 				}
 			}
 			set_policy_cooldown = interference
 			set_policy_cooldown = enlightenment
+		}
+		if = {
+			limit = {
+				has_country_flag = found_presapients
+				NOT = {
+					has_country_flag = mem_eden_protocol_pre_sapient
+				}
+			}
+			set_country_flag = mem_eden_protocol_pre_sapient
+			set_policy = {
+				policy = pre_sapients
+				option = pre_sapients_protect
+			}
 		}
 		set_variable = {
 			which = mem_eden_protocol_cared_primitives_number_country
