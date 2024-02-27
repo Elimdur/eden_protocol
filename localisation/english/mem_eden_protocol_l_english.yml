@@ -58,6 +58,8 @@ mem_eden_protocol_sol_system_void_dweller_system_DESC:0 "Optional starting syste
  edict_mem_protocol_synchronicity_desc:0 "This edict activates the §Y$leader_trait_legendary_mem_eden_protocol$'s§! secondary effect:\n\n$mod_planet_jobs_alloys_produces_mult$, $mod_planet_jobs_physics_research_produces_mult$, $mod_planet_jobs_society_research_produces_mult$, $mod_planet_jobs_engineering_research_produces_mult$ and $mod_planet_jobs_simple_drone_produces_mult$: §G+2%§! for every cared for pre-ftl civilization (up to 25)."
  
  building_mem_eden_protocol_seeder_1:0 "Seeding and Caretaking Hub"
+ mem_eden_protocol_species_requires_habitable_planet:0 "£trigger_no£ §RAn §Yempty habitable planet§! or owned by §YPre-FTLs§! is required inside this system.§!"
+ mem_eden_protocol_species_requires_terraforming_candidate:0 "£trigger_no£ §RA planet with the §YTerraforming Candidate§! modifier is required inside this system.§!"
  building_mem_eden_protocol_seeder_1_desc:0 "A facility with the purpose of seeding and maintaining organic life on habitable worlds within this solar system."
  building_mem_eden_protocol_seeder_2:0 "Seeding and Caretaking Network"
  building_mem_eden_protocol_seeder_2_desc:0 "$building_mem_eden_protocol_seeder_1_desc$"

@@ -69,6 +69,9 @@ country_event = {
 		start_situation = {
 			type = situation_mem_eden_protocol_protocolswill
 		}
+		begin_event_chain = {
+			event_chain = mem_eden_protocol_dummy_chain
+		}
 		capital_scope = {
 			remove_all_buildings = yes
 			remove_all_districts = yes
