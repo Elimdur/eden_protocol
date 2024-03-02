@@ -70,7 +70,7 @@ country_event = {
 			type = situation_mem_eden_protocol_protocolswill
 		}
 		begin_event_chain = {
-			event_chain = mem_eden_protocol_dummy_chain
+			event_chain = mem_eden_protocol_chain
 		}
 		capital_scope = {
 			remove_all_buildings = yes
@@ -856,7 +856,7 @@ situation_event = {
 	picture = GFX_evt_habitat
 	is_triggered_only = yes
 	desc = mem_eden_protocol.101.desc
-	event_chain = mem_eden_protocol_dummy_chain
+	event_chain = mem_eden_protocol_chain
 	trigger = {
 		always = yes
 	}
@@ -893,7 +893,7 @@ situation_event = {
 	trigger = {
 		always = yes
 	}
-	event_chain = mem_eden_protocol_dummy_chain
+	event_chain = mem_eden_protocol_chain
 	option = {
 		# habitat building slots
 		name = mem_eden_protocol.101.a
@@ -935,7 +935,7 @@ situation_event = {
 	trigger = {
 		always = yes
 	}
-	event_chain = mem_eden_protocol_dummy_chain
+	event_chain = mem_eden_protocol_chain
 	option = {
 		# habitat district slots
 		name = mem_eden_protocol.102.a
@@ -1005,7 +1005,7 @@ situation_event = {
 	trigger = {
 		always = yes
 	}
-	event_chain = mem_eden_protocol_dummy_chain
+	event_chain = mem_eden_protocol_chain
 	option = {
 		# flat empire size from caretakers
 		name = mem_eden_protocol.104.a
@@ -1038,7 +1038,7 @@ situation_event = {
 	trigger = {
 		always = yes
 	}
-	event_chain = mem_eden_protocol_dummy_chain
+	event_chain = mem_eden_protocol_chain
 	option = {
 		# stay caretaker
 		name = mem_eden_protocol.105.a

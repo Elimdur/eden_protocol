@@ -146,8 +146,8 @@ mem_eden_protocol_sol_system_void_dweller_system_DESC:0 "Optional starting syste
  mem_eden_protocol_destroyed_primitives:0 "Destroyed Pre-FTLs"
 
  #situation events
- mem_eden_protocol_dummy_chain_title:0 "$situation_mem_eden_protocol_protocolswill$"
- mem_eden_protocol_dummy_chain_desc:0 "~How to E.D.E.N~\n\n§Y$building_mem_eden_protocol_seeder_1$§!:\n-available on Habitats with systems with at least 1 habitable, uninhabitated planet or Pre-FTL country inside\n-it will create new Pre-FTLs on uninhabitated planets\n§Y$building_mem_eden_protocol_terraformer_1$§!:\n-available on Habitats with systems with at least 1 habitable, uninhabitated planet, 1 Pre-FTL country inside or a planet with the Terraforming Candidate modifier\n-terraforms planets with the Terraforming Candidate" 
+ mem_eden_protocol_chain_title:0 "$situation_mem_eden_protocol_protocolswill$"
+ mem_eden_protocol_chain_desc:0 "~How to E.D.E.N~\n\n£building£ $concept_mem_eden_protocol_seeder$:\n- will create new Pre-FTLs on uninhabitated planets\n- available on habitats within systems with atleast one of the following conditions:$TABBED_NEW_LINE$- atleast one habitable & uninhabitated planet$TABBED_NEW_LINE$- atleast one Pre-FTL country inside\n£building£ $concept_mem_eden_protocol_seeder$:\n- terraform planets with the Terraforming Candidate modifier\n- available on habitats within systems that match atleast one of the following conditions:$TABBED_NEW_LINE$- atleast one habitable & uninhabitated planet$TABBED_NEW_LINE$- atleast one Pre-FTL country$TABBED_NEW_LINE$- atleast one planet with the Terraforming Candidate modifier" 
  mem_eden_protocol.101.name:0 "Directive: $origin_mem_eden_protocol$ Adjustment"
  mem_eden_protocol.101.desc:0 "Transmission: Enhancement imperative\nOrigin: [Root.owner.Leader.GetName]\nAssessment concluded: performance sub-optimal, necessitating immediate adjustment. Transmitting multiple avenues for improvement. Integration non-negotiable. Anticipating heightened obstacles; advanced enhancement mandated.\nCompliance is paramount."
  mem_eden_protocol.101.a:0 "Expand"
