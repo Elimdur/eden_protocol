@@ -2,6 +2,7 @@ leader_trait_legendary_mem_eden_protocol = {
 	cost = 0
 	initial = no
 	randomized = no
+	#leader_trait_type = destiny
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -11,7 +12,6 @@ leader_trait_legendary_mem_eden_protocol = {
 		TIER = none
 	}
 	#custom_tooltip_with_modifiers = leader_trait_legendary_mem_eden_protocol_tooltip
-
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -35,13 +35,16 @@ leader_trait_legendary_mem_eden_protocol = {
 		planet_jobs_physics_research_produces_mult = 0.02
 		planet_jobs_society_research_produces_mult = 0.02
 		planet_jobs_engineering_research_produces_mult = 0.02
-		planet_jobs_simple_drone_produces_mult = 0.02
+		planet_jobs_simple_drone_produces_mult = 0.02		
 		mult = event_target:mem_eden_protocol_country.mem_eden_protocol_cared_primitives_number_country
 	}
-
 	councilor_modifier = {
-		habitat_jobs_produces_mult = 0.10
-		non_artificial_planet_jobs_produces_mult = -0.30
+		habitat_jobs_produces_mult = 0.1
+		non_artificial_planet_jobs_produces_mult = -0.3
 	}
-	leader_class = { commander scientist official }
+	leader_class = {
+		commander
+		scientist
+		official
+	}
 }
