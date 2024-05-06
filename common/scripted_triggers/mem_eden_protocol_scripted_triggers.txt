@@ -1,9 +1,9 @@
 ### Overwrite
 
-is_void_dweller_empire = {
+has_void_dweller_origin = {
 	OR = {
-		has_ascension_perk = ap_voidborn
 		has_origin = origin_void_dwellers
+		has_origin = origin_void_machines
 		has_origin = origin_mem_eden_protocol
 	}
 }

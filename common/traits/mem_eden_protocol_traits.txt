@@ -30,7 +30,7 @@ leader_trait_legendary_mem_eden_protocol = {
 				has_edict = mem_protocol_synchronicity
 			}
 		}
-		#show_if_not_potential = yes # later
+		show_if_not_potential = yes
 		planet_jobs_alloys_produces_mult = 0.02
 		planet_jobs_physics_research_produces_mult = 0.02
 		planet_jobs_society_research_produces_mult = 0.02
